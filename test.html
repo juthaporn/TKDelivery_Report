@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Headers · Bootstrap v5.0</title>
+
+
+
+
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+
+ 
+    </style>
+
+<style>
+    h2 {
+      margin: 30px 0 0 0;
+    }
+    fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+    }
+ 
+    /* select with custom icons */
+    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item-wrapper {
+      padding: 0.5em 0 0.5em 3em;
+    }
+    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
+      height: 24px;
+      width: 24px;
+      top: 0.1em;
+    }
+    .ui-icon.video {
+      background: url("images/24-video-square.png") 0 0 no-repeat;
+    }
+    .ui-icon.podcast {
+      background: url("images/24-podcast-square.png") 0 0 no-repeat;
+    }
+    .ui-icon.rss {
+      background: url("images/24-rss-square.png") 0 0 no-repeat;
+    }
+ 
+    /* select with CSS avatar icons */
+    option.avatar {
+      background-repeat: no-repeat !important;
+      padding-left: 20px;
+    }
+    .avatar .ui-icon {
+      background-position: left top;
+    }
+  </style>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+   
+
+    <main> </main>
+    <script>
+        $( function() {
+          $.widget( "custom.iconselectmenu", $.ui.selectmenu, {
+            _renderItem: function( ul, item ) {
+              var li = $( "<li>" ),
+                wrapper = $( "<div>", { text: item.label } );
+       
+              if ( item.disabled ) {
+                li.addClass( "ui-state-disabled" );
+              }
+       
+              $( "<span>", {
+                style: item.element.attr( "data-style" ),
+                "class": "ui-icon " + item.element.attr( "data-class" )
+              })
+                .appendTo( wrapper );
+       
+              return li.append( wrapper ).appendTo( ul );
+            }
+          });
+       
+          $( "#filesA" )
+            .iconselectmenu()
+            .iconselectmenu( "menuWidget" )
+              .addClass( "ui-menu-icons" );
+       
+          $( "#filesB" )
+            .iconselectmenu()
+            .iconselectmenu( "menuWidget" )
+              .addClass( "ui-menu-icons customicons" );
+       
+          $( "#people" )
+            .iconselectmenu()
+            .iconselectmenu( "menuWidget")
+              .addClass( "ui-menu-icons avatar" );
+        } );
+        </script>
+
+
+ 
+
+    <fieldset>
+        <label for="people">Select a Person:</label>
+        <select name="people" id="people">
+          <option value="1" data-class="avatar" data-style="background-image: url(http://202.28.69.138/tkddhtml/assets/img/ktb.png);">John Resig</option>
+          <option value="2" data-class="avatar" data-style="background-image: url(&apos;http://www.gravatar.com/avatar/e42b1e5c7cfd2be0933e696e292a4d5f?d=monsterid&amp;r=g&amp;s=16&apos;);">Tauren Mills</option>
+          <option value="3" data-class="avatar" data-style="background-image: url(&apos;http://www.gravatar.com/avatar/bdeaec11dd663f26fa58ced0eb7facc8?d=monsterid&amp;r=g&amp;s=16&apos;);">Jane Doe</option>
+        </select>
+      </fieldset>
+   
+
+<div class="drop-down"> 
+    <select name="options"> 
+        <option class="en" value="en"  
+	   style="background-image:url('../assets/img/ktb.png');">English</option> 
+        <option class="fr" value="fr" 
+	   style="background-image:url('../assets/img/ktb.png');">French</option> 
+        <option class="nl" value="nl" 
+	   style="background-image:url('../assets/img/ktb.png');">Nederlands</option> 
+    </select> 
+</div> 
+
+</script>
+
+
+
+</body>
+
+</html>

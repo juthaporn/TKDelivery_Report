@@ -1,0 +1,11 @@
+<svg id="Location" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Group_532" data-name="Group 532">
+    <path id="Path_267" data-name="Path 267" d="M0,0H20V20H0Z" fill="none"/>
+  </g>
+  <g id="Group_534" data-name="Group 534" transform="translate(1 3)">
+    <g id="Group_533" data-name="Group 533">
+      <path id="Path_268" data-name="Path 268" d="M1,9.706v7.412H4.706V12.671H7.671v4.447h3.706V9.706L6.188,6Z" transform="translate(-1 -2.618)" fill="#b6b6b6"/>
+      <path id="Path_269" data-name="Path 269" d="M10,3V4.633l5.774,4.144V9.63h1.65v1.657h-1.65v1.657h1.65V14.6h-1.65v3.315h4.949V3Zm7.424,4.972h-1.65V6.315h1.65Z" transform="translate(-3.724 -2.917)" fill="#b6b6b6"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,122 @@
+:root {
+
+    /* public color */
+    --tk-red: #ec3748;
+    --tk-red-v2: #F0A2A9;
+    --tk-gray-v1: #383838;
+    --tk-gray-v2: #979797;
+    --tk-gray-v3 :#b0b0b0;
+    --tk-gray-v4 :#cacaca;
+    --tk-gray-v5 :#f7f7f7;
+    --tk-gray-v6 :#fafafa;
+    --tk-dark-v1 : #1c232b;
+    --tk-black : #000000;
+    --tk-white : #ffffff;
+    --tk-shadow-color: rgba(0, 0, 0, .15);
+ 
+}
+
+
+.tk-red {
+    color: var(--tk-red) !important;
+}
+
+
+.tk-gray-v1 {
+    color: var(--tk-gray-v1) !important;
+}
+
+.tk-gray-v2 {
+    color: var(--tk-gray-v2) !important;
+}
+
+.tk-gray-v3 {
+    color: var(--tk-gray-v3) !important;
+}
+
+.tk-gray-v4 {
+    color: var(--tk-gray-v4) !important;
+}
+
+.tk-gray-v5 {
+    color: var(--tk-gray-v5) !important;
+}
+
+.tk-gray-v6 {
+    color: var(--tk-gray-v6) !important;
+}
+
+.tk-dark-v1 {
+    color: var(--tk-dark-v1) !important;
+}
+
+
+
+/*font color disable*/
+
+.disabled {
+    color: var(--tk-dark-v1);
+}
+
+
+
+
+/*bg color*/
+.tk-bg-red {
+    background-color: var(--tk-red) !important;
+}
+
+.tk-bg-gray-v1 {
+    background-color: var(--tk-gray-v1) !important;
+}
+.tk-bg-gray-v2 {
+    background-color: var(--tk-gray-v2) !important;
+}
+
+.tk-bg-gray-v3 {
+    background-color: var(--tk-gray-v3) !important;
+}
+
+.tk-bg-gray-v4 {
+    background-color: var(--tk-gray-v4) !important;
+}
+
+.tk-bg-gray-v5 {
+    background-color: var(--tk-gray-v5) !important;
+}
+
+.tk-bg-gray-v6 {
+    background-color: var(--tk-gray-v6) !important;
+}
+
+.tk-bg-dark-v1 {
+    background-color: var(--tk-dark-v1) !important;
+}
+
+/*border color*/
+.tk-brd-red{
+    border-color: var(--tk-red);
+}
+.tk-brd-gray-v1{
+    border-color: var(--tk-gray-v1);
+}
+.tk-brd-gray-v2{
+    border-color: var(--tk-gray-v2);
+}
+.tk-brd-gray-v3{
+    border-color: var(--tk-gray-v3);
+}
+.tk-brd-gray-v4{
+    border-color: var(--tk-gray-v4);
+}
+.tk-brd-gray-v5{
+    border-color: var(--tk-gray-v5);
+}
+.tk-brd-gray-v6{
+    border-color: var(--tk-gray-v6);
+}
+.tk-brd-gray-v1 {
+    background-color: var(--tk-dark-v1);
+}
+
+

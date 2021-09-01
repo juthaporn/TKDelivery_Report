@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="WALAI AutoLib">
+    <meta name="generator" content="WALAI AutoLib 1.0.0.0">
+    <title>Accepted order</title>
+
+    <!-- TK Font CSS -->
+    <link href="../../assets/fonts/fonts.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Bootstrap Icon Font CSS -->
+    <link href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        -->
+
+
+
+
+    <!-- Custom styles for this template -->
+
+    <link href="../../assets/css/walai.css" rel="stylesheet">
+    <link href="../../assets/css/colors.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar sticky-top  flex-md-nowrap p-0 navbar-light bg-white " style="z-index: 99 !important;">
+
+        <!-- Toast message -->
+        <div class="position-fixed top-0 start-50 translate-middle" style="margin-top: 5rem !important">
+            <div class="toast align-items-center bg-dark text-white" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ยืนยันการชำระเงินเรียบร้อยแล้ว
+                    </div>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="toast"
+                        aria-label="Close">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Toast message -->
+
+
+        <nav class="container navbar-expand-lg" style="max-width: 1000px;">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0" href="#">
+                <img class="navbar-brand-logo" src="../../assets/brand/Logo@2x.png">
+            </a>
+
+            <button class="navbar-toggler position-absolute d-md-none collapsed border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <ul class="nav justify-content-end w-100 d-none d-md-flex">
+
+                <li class="nav-link" style="padding-top: 1rem; padding-bottom: .02rem;">
+                    <a class="btn btn-danger btn-sm rounded-pill header-button tk-overflow-wrap"
+                        style="height: 24px; max-width: 110px;"> <i class="bi bi-person-fill"></i> User123</a>
+                </li>
+                <li class="w-100 text-end" style="padding-top: .02rem;">
+                    <a class="nav-link disabled header-text" href="#" tabindex="-1" aria-disabled="true" i
+                        role="button">
+                        <i class="bi bi-geo-alt"></i>
+                        <!--<img src="../../assets/img/Location Administrator.svg" style="padding-bottom: 4px;">-->TK
+                        park Bangkok
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+
+    <!-- Modal filter-->
+    <div class="modal  fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header tk-modal-header py-1">
+                    <h6 class="modal-title" id="filterModalLabel">Filter - Order Sent</h6>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <p>Date</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                            value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Today
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                            value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Date
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                            value="option3" disabled>
+                        <label class="form-check-label" for="exampleRadios3">
+                            Date range
+                        </label>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill "
+                            placeholder="Start date">
+                        <span class="form-control-btn">
+                            <i class="bi bi-calendar"></i>
+                        </span>
+                    </div>
+                    <div class="input-group mb-2">
+                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill "
+                            placeholder="End date">
+                        <span class="form-control-btn">
+                            <i class="bi bi-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer tk-modal-footer">
+                    <a class="btn tk-modal-footer-button w-100 text-white">กรอง</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal YesNo-->
+    <div class="modal fade" id="YesNoModal" tabindex="-1" aria-labelledby="YesNoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header tk-modal-header py-1">
+                    <h6 class="modal-title" id="YesNoModalLabel">ยืนยันการชำระเงิน</h6>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <p class="tk-modal-body-p">ยืนยันการชำระเงิน ?</p>
+                </div>
+                <div class="modal-footer tk-modal-footer">
+                    <a class="btn tk-modal-footer-button-no w-50 showToast" data-bs-dismiss="modal"
+                        aria-label="Close">ไม่ใช่</a>
+                    <a class="btn tk-modal-footer-button w-50 text-white showToast" data-bs-dismiss="modal"
+                        aria-label="Close">ใช่</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--modal ดูรายละเอียด Item-->
+    <div class="MDLDetail modal fade" tabindex="-1" aria-labelledby="MDLDetail" aria-hidden="true">
+    <!-- <ngb-modal-window role="dialog" tabindex="-1" aria-modal="true" class="MDLDetail d-block modal fade"> -->
+        <div role="document" class="modal-dialog">
+            <div class="modal-content border-0 tk-rounded-10">
+                <!-- <app-dialog-item-detail _nghost-irr-c92=""> -->
+                    <!-- <div _ngcontent-irr-c92="" class="modal-content border-0 tk-rounded-10"> -->
+                        <div _ngcontent-irr-c92="" class="modal-header tk-modal-header py-1">
+                            <h6 _ngcontent-irr-c92="" id="openDDModalLabel" class="modal-title fw-bold fs-5">ดูรายละเอียด</h6>
+
+                            <a _ngcontent-irr-c92="" data-bs-dismiss="modal" aria-label="Close"
+                                class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;"></a>
+                        </div>
+
+
+                        <div _ngcontent-irr-c92="" class="modal-body">
+                            <div _ngcontent-irr-c92="" class="card mb-3" style="border: none;">
+                                <div _ngcontent-irr-c92="" class="row">
+                                    <div _ngcontent-irr-c92="" class="col-3 tk-card-bookCover">
+                                        <app-book-cover _ngcontent-irr-c92="" _nghost-irr-c91="">
+                                            <img _ngcontent-irr-c91="" class="w-100"
+                                                src="http://imageopac.tkpark.or.th/bookcover/117772/117772-fc-a.jpg">
+                                        </app-book-cover>
+                                    </div>
+                                    <div _ngcontent-irr-c92="" class="col-9">
+                                        <div _ngcontent-irr-c92="" class="card-body">
+
+                                            <h6 _ngcontent-irr-c92="" class="fs-5 fw-bold mb-3">มะพร้าวน้ำหอม /
+                                                อภิชาติ ศรีสอาด</h6>
+                                                
+                                            <p _ngcontent-irr-c92="" class="fs-6 tk-gray-v2 mb-0">CallNumber</p>
+                                            <p _ngcontent-irr-c92="" >634.61 .อ63 /ฉบับ 1</p>
+
+                                            <p _ngcontent-irr-c92="" class="cfs-6 tk-gray-v2 mb-0">Collection</p>
+                                            <p _ngcontent-irr-c92="" ><img src="../../assets/img/book.svg"
+                                                style="width: 20px; margin: auto 0;" /> TK Alive</p>
+
+                                            <p _ngcontent-irr-c92="" class="fs-6 tk-gray-v2 mb-0">Barcode</p>
+                                            <p _ngcontent-irr-c92="" >3899215288865</p>
+
+                                            <p _ngcontent-irr-c92="" class="fs-6 tk-gray-v2 mb-0">Publisher</p>
+                                            <p _ngcontent-irr-c92="" >LinkBook</p>
+
+                                            <p _ngcontent-irr-c92="" class="fs-6 tk-gray-v2 mb-0">Status</p>
+                                            <p _ngcontent-irr-c92="" class="tk-red">Delivery request</p>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div _ngcontent-irr-c92="" class="modal-footer tk-modal-footer">
+                            <a _ngcontent-irr-c92=""
+                                class="btn tk-modal-footer-button text-white w-100 py-2" data-bs-dismiss="modal" aria-label="Close">ปิด</a></div>
+                    </div>
+                <!-- </app-dialog-item-detail> -->
+            </div>
+        </div>
+    <!-- </ngb-modal-window> -->
+    </div>
+
+
+
+
+    <div class="container master-container">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse tk-dark-v1">
+                <ul class=" nav justify-content-between w-100 d-md-none " style="margin-top: 1rem ">
+
+                    <li class="nav-link ">
+                        <a class="btn btn-danger btn-sm rounded-pill header-button "> <i class="bi bi-person-fill "></i>
+                            User123</a>
+                    </li>
+                    <li class="text-end " style="padding-top: .2rem; ">
+                        <a class="nav-link disabled header-text " href="# " tabindex="-1 " aria-disabled="true "
+                            role="button ">
+                            <i class="bi bi-geo-alt"></i>
+                            <!-- <img src="../../assets/img/Location Administrator.svg " style="padding-bottom: 4px; ">-->TK
+                            park Bangkok
+                        </a>
+                    </li>
+                </ul>
+
+                <hr class="d-md-none ">
+
+                <div class="position-sticky pt-md-3 ">
+
+                    <a class="nav-link sidebar-heading" href="#">
+                        <i class="bi bi-truck sidebarMenu-icon"></i> TK Book Delivery
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item">
+                            <a class="btn w-100 sidebarMenu-li" href="../../html/Ordersent.html">
+                                <span class="float-start"><i class="bi bi-tag-fill sidebarMenu-icon"></i> รายการใหม่ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn w-100 sidebarMenu-li" href="../../html/AcceptedOrder.html">
+                                <span class="float-start"><i class="bi bi-file-earmark-check sidebarMenu-icon"></i> กำลังดำเนินการ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../../html/WaitingForPayment.html">
+                                <span class="float-start"><i class="bi bi-hourglass-split  sidebarMenu-icon"></i> รอชำระเงิน </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li> 
+                        <li class="nav-item">
+
+                            <a class="btn w-100 sidebarMenu-li" href="../../html/ReceivedPayment.html">
+                                <span class="float-start"><i class="bi bi-receipt sidebarMenu-icon"></i> ตรวจสอบการชำระเงิน </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+
+                       </li>
+                        <li class="nav-item ">
+                            
+                            <a class="btn w-100 sidebarMenu-li" href="../../html/PrepareForTransis.html">
+                                <span class="float-start"><i class="bi bi-box-seam  sidebarMenu-icon"></i> เตรียมจัดส่ง </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../../html/InTransit.html">
+                                <span class="float-start"><i class="bi bi-truck sidebarMenu-icon"></i> อยู่ระหว่างการจัดส่ง </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li  sidebarMenu-li-active" href="../../html/PickupOrder.html">
+                                <span class="float-start"><i class="bi bi-geo-fill  sidebarMenu-icon"></i> รอให้มารับ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+
+                        </li>
+                    </ul>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="../../html/History.html">
+                        <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
+                    </a>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="#">
+                        <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/Configuration.html">
+                                <i class="bi bi-tools sidebarMenu-icon"></i> การตั้งค่า
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/Location.html">
+                                <i class="bi bi-bank2 sidebarMenu-icon"></i> สาขาห้องสมุด
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="# ">
+                        <i class="bi bi-geo-alt-fill sidebarMenu-icon"></i> ผู้ดูแลระบบประจำสาขา
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link sidebarMenu-li " href="../../html/Parameter.html">
+                                <i class="bi bi-gear-fill sidebarMenu-icon"></i> พารามิเตอร์
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/Agreement.html">
+                                <i class="bi bi-clipboard-check sidebarMenu-icon"></i> เงื่อนไขการให้บริการ
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/MemberType.html">
+                                <i class="bi bi-file-person-fill sidebarMenu-icon"></i> ประเภทสมาชิก
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/Holiday.html">
+                                <i class="bi bi-life-preserver sidebarMenu-icon"></i> วันหยุด
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/OpenDateTime.html">
+                                <i class="bi bi-calendar3-week sidebarMenu-icon"></i> เวลาทำการ
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/ItemStatus.html ">
+                                <i class="bi bi-check-circle-fill sidebarMenu-icon "></i> สถานะทรัพยากร
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/ItemClass.html ">
+                                <i class="bi bi-inboxes-fill sidebarMenu-icon "></i> ประเภททรัพยากร
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../../html/Collection.html ">
+                                <i class="bi bi-grid-1x2-fill sidebarMenu-icon "></i> คอลเลคชัน
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/LogisticArea.html ">
+                                <i class="bi bi-geo-fill sidebarMenu-icon "></i> พื้นที่จัดส่ง
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../../html/LogisticCompany.html ">
+                                <i class="bi bi-building sidebarMenu-icon "></i> ตั้งค่าการจัดส่ง
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="text-center mt-3 mb-5">
+                    <a href="../../Login.html"
+                        class="btn btn-outline-danger rounded-pill sidebarMenu-li py-1">ออกจากระบบ</a>
+                </div>
+            </nav>
+
+
+            <main class="col-md-8 ms-sm-auto col-lg-9 px-md-4 " style="margin-top: 20px; ">
+                <div class="card">
+                    <div class="card-header walai-card-header">
+                        อยู่ระหว่างการจัดส่ง | DR00001
+                    </div>
+
+                    <div class="card-body">
+
+                        <!---ข้อมูลสมาชิก-->
+                        <p class="tk-head-line fw-bolder"><span>
+                                <i class="bi bi-caret-up-fill" data-bs-toggle="collapse" href="#listUserCollapse"
+                                    aria-expanded="false" aria-controls="listUserCollapse"></i>
+                                ข้อมูลสมาชิก</span>
+                        </p>
+
+                        <div class="ps-5" id="listUserCollapse">
+
+                            <p><i class="bi bi-person-fill tk-gray-v2 me-1"></i>Will Smith</p>
+                            <div class="row justify-content-between">
+                                <div class="col-4">
+                                    <p><i class="bi bi-telephone-fill tk-gray-v2 me-1"></i>0758872602</p>
+                                </div>
+                                <div class="col-8">
+                                    <p><i class="bi bi-envelope-fill tk-gray-v2 me-1"></i>will@gmail.com</p>
+                                </div>
+                            </div>
+                            <p hidden><i class="bi bi-house-fill tk-gray-v2 me-1"></i> 222 Thaiburee Thasala Nakhon si
+                                thammarat 80160</p>
+                        </div>
+
+
+
+
+                        <!--List-->
+                        <p class="tk-head-line mt-4 fw-bolder">
+                            <span>
+                                <i class="bi bi-caret-up-fill" data-bs-toggle="collapse" href="#listCollapse"
+                                    aria-expanded="false" aria-controls="listCollapse"></i>
+                                รายการ</span>
+                        </p>
+
+                      
+                            
+                        <div class="ps-5" id="listCollapse">
+                                                     
+
+                            <!---List Order-->
+                            <div id="listOrder" class="border border-1 tk-rounded-10 px-3 py-3">
+                                <!--order enable-->
+                                <div class="row justify-content-between pb-3">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <div class="col-2">
+                                            <img src="../../assets/img/bookCover/781511-fc-a (1).png"
+                                                class="img-fluid w-100" onerror="imgError(this);" />
+                                        </div>
+                                        <div class="col-10 ps-4">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-11 fw-bold fs-6 mb-2">นวลหยกงาม</div>
+                                            </div>
+
+
+                                            <p class="mb-0">รป .ซ2567น / นว .ซ25น</p>
+                                            <p class="form-group">
+                                                <img src="../../assets/img/book.svg"
+                                                    style="width: 20px; margin: auto 0;" />
+                                                <span class="mt-1">หนังสือทั่วไปภาษาไทย</span></p>
+
+
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-auto fw-bold fs-6">
+                                                    <a class="btnMDLDetail btn tk-btn-brd">ดูรายละเอียด</a>
+                                                </div>
+                                                <div class="col-auto tk-red py-2 fs-6">On shelf</div>
+                                            </div>
+
+                                           
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control tk-form-control mt-3" id="list1Collapse"
+                                        rows="2" placeholder="Item note"></textarea>
+
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-between pb-3">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <div class="col-2">
+                                            <img src="../../assets/img/bookCover/781511-fc-a (1).png"
+                                                class="img-fluid w-100" onerror="imgError(this);" />
+                                        </div>
+                                        <div class="col-10 ps-4">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-11 fw-bold fs-6 mb-2">นวลหยกงาม</div>
+                                            </div>
+
+
+                                            <p class="mb-0">รป .ซ2567น / นว .ซ25น</p>
+                                            <p class="form-group">
+                                                <img src="../../assets/img/book.svg"
+                                                    style="width: 20px; margin: auto 0;" />
+                                                <span class="mt-1">หนังสือทั่วไปภาษาไทย</span></p>
+
+
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-auto fw-bold fs-6">
+                                                    <a class="btnMDLDetail btn tk-btn-brd">ดูรายละเอียด</a>
+                                                </div>
+                                                <div class="col-auto tk-red py-2 fs-6">On shelf</div>
+                                            </div>
+
+                                           
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control tk-form-control mt-3" id="list1Collapse"
+                                        rows="2" placeholder="Item note"></textarea>
+
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <hr>
+                                    </div>
+                                </div>
+
+
+                           
+
+
+                            </div>
+
+                            <!--รายการที่ถูกยกเลิก-->
+                            <p hidden class="fw-bolder mt-4">รายการหนังสือที่ถูกยกเลิก </p>
+                            <div hidden id="listCancel" style="background-color: #F8D7DA;"
+                                class="border border-danger tk-rounded-10 px-3 py-3 mt-4">
+
+                                <div class="row justify-content-between pb-3">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <div class="col-2">
+                                            <img src="../../assets/img/bookCover/781511-fc-a (1).png"
+                                                class="img-fluid w-100" onerror="imgError(this);" />
+                                        </div>
+                                        <div class="col-10 ps-4">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-11 fw-bold fs-6">นวลหยกงาม</div>
+                                                <div class="col-1">
+                                                    <a class="btn"><i class="bi bi-arrow-up-circle tk-red"></i></a>
+                                                </div>
+                                            </div>
+
+
+                                            <p class="mb-0">รป .ซ2567น / นว .ซ25น</p>
+                                            <p class="form-group">
+                                                <img src="../../assets/img/book.svg"
+                                                    style="width: 20px; margin: auto 0;" />
+                                                <span class="mt-1">หนังสือทั่วไปภาษาไทย</span></p>
+
+
+                                            <div class="d-flex justify-content-between">
+                                                <div class="col-auto fw-bold fs-6">
+                                                    <a class="btnMDLDetail btn tk-btn-brd bg-white">ดูรายละเอียด</a>
+                                                </div>
+                                                <div class="col-auto tk-red py-2 fs-6">Rejected</div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-control mt-3 tk-red bg-white border-danger tk-rounded-10"
+                                        id="itenNote" rows="2" placeholder="Item note">
+                                        ไม่พบทรัพยากร
+                                    </label>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <!--staff note-->
+                        <p class="tk-head-line fw-bolder mt-4">
+                            <span>
+                                <i class="bi bi-caret-up-fill" data-bs-toggle="collapse" href="#txtstaff"
+                                    aria-expanded="false" aria-controls="txtstaff"></i>
+                                บันทึกข้อความ</span>
+                        </p>
+
+                        <div class="ps-5">
+                            <textarea class="form-control tk-form-control mt-2" id="txtstaff" rows="2"
+                                placeholder="Staff note"></textarea>
+                        </div>
+
+
+                        <!--Address-->
+                        <p class="tk-head-line fw-bolder mt-4"><span>
+                                <i class="bi bi-caret-up-fill" data-bs-toggle="collapse" href="#listAddrCollapse"
+                                    aria-expanded="false" aria-controls="listAddrCollapse"></i>
+                                    ข้อมูลการจัดส่ง</span>
+                        </p>
+
+                        <!--deliverytypeid = 1-->
+                        <div hidden class="ps-5 mb-4" id="listAddrCollapse">
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <p>จัดส่งผ่านบริษัทจัดส่ง</p>
+                                </div>
+                                <div class="col-auto">
+                                    <a class="btn py-0"><i class="bi bi-printer-fill tk-red fs-4"></i></a>
+                                </div>   
+                            </div>
+                            
+                            <p><i class="bi bi-person-fill tk-gray-v2 me-1"></i>Belle Annablle</p>
+                            <div class="row justify-content-between">
+                                <div class="col-4">
+                                    <p><i class="bi bi-telephone-fill tk-gray-v2 me-1"></i>0758872602</p>
+                                </div>
+                                <div class="col-8">
+                                    <p><i class="bi bi-envelope-fill tk-gray-v2 me-1"></i>Belle@gmail.com</p>
+                                </div>
+                            </div>
+                            <p><i class="bi bi-house-fill tk-gray-v2 me-1"></i> 222 Thaiburee Thasala Nakhon si
+                                thammarat 80160</p>
+
+                            <!---ต้นทาง ปลายทาง-->
+                            <div class="row justify-content-between px-2" style="padding-right: 1rem !important;">
+                                <div class="col-5 border border-danger tk-rounded-10 py-1 mb-4">
+                                    Bangkok</div>
+                                <div class="col-2 py-1">
+                                    <img src="../../assets/img/arrowred.png" class=" img-fluid">
+                                </div>
+                                <div class="col-5 border border-danger tk-rounded-10 py-1 mb-4">
+                                    Nakhon si thammarat</div>
+
+                            </div>
+
+                            <!---Select Logistic-->
+                            <div class="mb-4 fw-bold">
+                                <i class="bi bi-truck tk-gray-v2  me-1"></i> Kerry (ภาคใต้)
+                            </div>
+
+                            <input disabled type="text" id="inpTracking" class="form-control tk-rounded-10 tk-form-control w-50 tk-bg-gray-v5" value="TK444468236bhk546">
+
+                            
+                        </div>
+
+                        <!--delivery type is pickup-->
+                        <div class="ps-5 mb-4" id="listAddrCollapse">
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <p>รับที่ห้องสมุด</p>
+                                </div>
+                                <div class="col-auto">
+                                    <a class="btn py-0"><i class="bi bi-printer-fill tk-red fs-4"></i></a>
+                                </div>   
+                            </div>
+                            <p class="tk-gray-v2">รับในวันที่แจ้งภายในเวลา 19.00 น.</p>
+                            <label class="form-control tk-rounded-10 tk-form-control tk-bg-gray-v5">ไปรับเวลา
+                                17.00</label>
+
+                        </div>
+
+                        <!--Cost Fee Total-->
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-3 text-end">ค่าจัดส่ง</div>
+                            <div class="col-2 text-end">150</div>
+                            <div class="col-1">฿</div>
+                        </div>
+
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-3 text-end">ค่าธรรมเนียม</div>
+                            <div class="col-2 text-end">50</div>
+                            <div class="col-1">฿</div>
+                        </div>
+
+                        <div class="row justify-content-center tk-red mb-3">
+                            <div class="col-3 text-end">ราคารวม</div>
+                            <div class="col-2 text-end">200 </div>
+                            <div class="col-1">฿</div>
+                        </div>
+
+
+                       
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-inline text-center mt-1">
+                    <a class="btn text-white  tk-bg-gray-v3 rounded-pill tk-button border-0 mt-5 mb-3 me-2"
+                        data-bs-toggle="modal" data-bs-target="#YesNoModal"> ยกเลิกรายการ</a>
+                    <a class="btn btn-danger rounded-pill tk-button mt-5 mb-3 " data-bs-toggle="modal"
+                        data-bs-target="#YesNoModal"> บันทึกรับ</a>
+                </div>
+
+
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
+
+
+
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function () {
+
+            
+            $(".btnMDLDetail").click(function () {
+                $('.MDLDetail').modal('show');
+
+            });
+
+
+            $(".showToast").click(function () {
+                $('.toast').toast('show');
+
+            });
+
+            setTimeout(() => {
+                $('.toast').toast('hide');
+            }, 1000);
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<svg id="Order_sent" data-name="Order sent" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Group_170" data-name="Group 170">
+    <path id="Path_80" data-name="Path 80" d="M0,0H20V20H0Z" fill="none"/>
+  </g>
+  <g id="Group_171" data-name="Group 171" transform="translate(2 2)">
+    <path id="Path_81" data-name="Path 81" d="M17.529,9.528,10.464,2.464A1.6,1.6,0,0,0,9.336,2H3.6A1.6,1.6,0,0,0,2,3.6V9.336a1.573,1.573,0,0,0,.472,1.128l7.064,7.064a1.6,1.6,0,0,0,2.264,0l5.736-5.736A1.6,1.6,0,0,0,17.529,9.528ZM5.6,6.8A1.2,1.2,0,1,1,6.8,5.6,1.2,1.2,0,0,1,5.6,6.8Z" transform="translate(-2 -2)" fill="#bcbcbc"/>
+  </g>
+</svg>

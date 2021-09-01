@@ -1,0 +1,10 @@
+<svg id="Received_payment" data-name="Received payment" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <path id="Path_88" data-name="Path 88" d="M0,0H20V20H0Z" fill="none"/>
+  <g id="Group_178" data-name="Group 178" transform="translate(3 2)">
+    <path id="Path_89" data-name="Path 89" d="M15.833,3.2,14.667,2,13.5,3.2,12.333,2,11.167,3.2,10,2,8.833,3.2,7.667,2,6.5,3.2,5.333,2V13.2H3v2.4A2.364,2.364,0,0,0,5.333,18h9.333A2.364,2.364,0,0,0,17,15.6V2Zm-.389,12.4a.778.778,0,1,1-1.556,0V13.2h-7V4.4h8.556Z" transform="translate(-3 -2)" fill="#bcbcbc"/>
+    <rect id="Rectangle_87" data-name="Rectangle 87" width="5" height="1" transform="translate(5 3.889)" fill="#bcbcbc"/>
+    <rect id="Rectangle_88" data-name="Rectangle 88" width="1" height="1" transform="translate(10.75 3.889)" fill="#bcbcbc"/>
+    <rect id="Rectangle_89" data-name="Rectangle 89" width="5" height="1" transform="translate(5 6.222)" fill="#bcbcbc"/>
+    <rect id="Rectangle_90" data-name="Rectangle 90" width="1" height="1" transform="translate(10.75 6.222)" fill="#bcbcbc"/>
+  </g>
+</svg>

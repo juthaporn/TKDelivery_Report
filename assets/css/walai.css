@@ -1,0 +1,505 @@
+@import "colors.css";
+/* Using a url to import another css. && Ex. declare property color  --> "color: var(--tk-red);"  */
+
+
+body {
+  font-size: .875rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Hearder
+ */
+
+.navbar {
+  box-shadow: 0 .125rem .0rem rgba(0, 0, 0, .075) !important;
+}
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+
+.navbar-brand-logo {
+  width: 137px;
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.05rem;
+}
+
+.nav-link {
+  color: var(--tk-dark-v1);
+}
+
+.nav .nav-link:hover {
+  color: var(--tk-red);
+}
+
+.nav-link:hover {
+  color: var(--tk-red);
+}
+
+.nav-link:focus {
+  color: var(--tk-red);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.header-text {
+  font-size: 12px !important;
+}
+
+.header-button {
+  /* padding: 2px 15px 2px 15px; */
+  font-size: 10px !important;
+}
+
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  /* z-index: 100; */
+  /* Behind the navbar */
+  padding: 5px 0 0;
+  /* Height of navbar */
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+    background-color: var(--tk-white);
+    height: fit-content;
+    position: absolute;
+    z-index: 2;
+    padding-bottom: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  }
+
+  .tk-mw-200 {
+    max-width: 200px;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  /*color: #333;*/
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  /* color: var(--tk-gray-v2); */
+}
+
+.sidebar .nav-link.active {
+  color: var(--tk-red);
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  /*color: inherit;*/
+  color: var(--tk-red);
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.sidebarMenu-li {
+  font-weight: normal !important;
+  font-size: 12px !important;
+}
+
+.sidebarMenu-badge {
+  text-align: right;
+  float: right;
+}
+
+.sidebarMenu-icon {
+  font-size: 1.1rem;
+  color: var(--tk-gray-v2);
+}
+
+.sidebarMenu-li-active {
+  background-color: var(--tk-gray-v5) !important;
+}
+
+
+/* Content */
+
+.master-container {
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: var(--tk-gray-v1);
+  border-color: var(--tk-gray-v1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.walai-card-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.walai-button {
+  padding: 2px 15px 2px 15px;
+  font-size: 10px !important;
+}
+
+.tk-button {
+  /* padding: 3px 25px 2px 25px; */
+  font-size: 10px !important;
+  /* height: 24px; */
+  padding: auto 25px;
+  height: 30px;
+  min-width: 93px;
+}
+
+.tk-button-01 {
+  padding: 3px 25px 5px 25px !important;
+  font-size: 10px !important;
+}
+
+.walai-icon {
+  font-size: 16px;
+}
+
+.form-check-input:checked {
+  background-color: var(--tk-red);
+  border-color: var(--tk-red);
+}
+
+/* .form-check-input:checked[type=checkbox] , .form-check-label{
+  color: var(--tk-red);
+} */
+
+
+.tk-a {
+  cursor: pointer !important;
+  text-decoration: none;
+}
+
+.tk-a:hover {
+  cursor: pointer !important;
+  text-decoration: none;
+  color: var(--tk-red);
+}
+
+.tk-modal-header {
+  background-color: var(--tk-gray-v5);
+}
+
+.tk-modal-header-alert {
+  border-bottom: none !important;
+}
+
+.tk-modal-body-p {
+  font-size: 14px !important;
+}
+
+.tk-modal-footer {
+  padding: 0 !important;
+  justify-content: center;
+}
+
+.tk-modal-footer-button {
+  background-color: var(--tk-red);
+  color: #fff;
+  margin: 0;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.tk-modal-footer-button-no {
+  background-color: var(--tk-gray-v5);
+  color: var(--tk-gray-v2);
+  margin: 0;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.tk-form-control {
+  font-size: 12px;
+  border-radius: 10px;
+  /* color: var(--tk-gray-v4); */
+  background-color: var(--tk-gray-v5);
+}
+
+.tk-form-control-60 {
+  width: 60px !important;
+  max-width: 60px !important;
+  text-align: center;
+}
+
+.tk-form-control-line {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--tk-gray-v5);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 60px !important;
+}
+
+.tk-form-control-line:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.tk-alert {
+  background-color: var(--tk-gray-v1);
+  color: #fff;
+  font-size: 14px;
+}
+
+.tk-alert-v2 {
+  background: none !important;
+  color: var(--tk-red);
+  font-size: 10px !important;
+  padding: 8px 16px;
+}
+
+.tk-badge {
+  background: none !important;
+  color: var(--tk-red);
+  font-size: 10px !important;
+  border-color: var(--tk-red);
+  margin-bottom: 4px;
+}
+
+.tk-btn-close-v1 {
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.6rem 0.5rem !important;
+  color: var(--tk-red) !important;
+}
+
+.tk-btn-close {
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.6rem 1rem !important;
+  color: var(--tk-red) !important;
+}
+
+.form-control-btn {
+  position: static;
+  z-index: 10;
+  display: inherit;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: var(--tk-gray-v2);
+  margin-left: -30px !important;
+}
+
+
+/*the container must be positioned relative:*/
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid var(--tk-gray-v5);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--tk-gray-v5);
+  border-bottom: 1px solid var(--tk-gray-v5);
+}
+
+/*when hovering an item:*/
+
+.autocomplete-items div:hover {
+  background-color: var(--tk-gray-v4);
+}
+
+
+/*when navigating through the items using the arrow keys:*/
+
+.autocomplete-active {
+  background-color: var(--tk-gray-v5) !important;
+  color: var(--tk-black);
+}
+
+.tk-head-line {
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid var(--tk-gray-v4) !important;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+.tk-head-line span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.tk-card-title {
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+.tk-card-text {
+  color: var(--tk-gray-v2) !important;
+  margin-bottom: 3px !important;
+}
+
+.tk-card-bookCover {
+  vertical-align: middle !important;
+  text-align: center !important;
+  margin-top: 10px;
+}
+
+
+/*wrap text*/
+
+.tk-overflow-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tk-rounded-10 {
+  border-radius: 10px !important;
+}
+
+
+/* disabled href tag */
+
+a[disabled] {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* color tag a */
+
+a:hover,
+a:active {
+  color: var(--tk-red);
+}
+
+/* form-* :focus */
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--tk-red);
+  box-shadow: 0 0 0 0.25rem var(--tk-red-v2);
+  background-color: var(--tk-gray-v6);
+}
+
+.form-control:active {
+  background-color: var(--tk-gray-v6);
+}
+
+.form-check-input:checked {
+  background-color: var(--tk-red);
+  border-color: var(--tk-red);
+}
+
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23F0A2A9'/%3e%3c/svg%3e");
+
+}
+
+
+.dropdown-item.active {
+  color: #fff !important;
+  text-decoration: none !important;
+  background-color: #ec3748 !important;
+}
+
+/* remove sourse display in body*/
+.sr-only {
+  display: none;
+}
+
+.btn-close {
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+}
+
+.btn-close:focus {
+  border-color: var(--tk-red);
+  box-shadow: 0 0 0 0.25rem var(--tk-red-v2);
+}
+
+.tk-btn-brd {
+  /* border-color:  var(--tk-dark-v1); */
+  box-shadow: 0 0 3px rgb(54, 54, 54);
+  border-radius: 15px !important;
+  padding: 3px 10px 5px;
+  font-size: 14px;
+}
+
+input[disabled] {
+  pointer-events: none;
+  cursor: default;
+  background-color: var(--tk-gray-v3);
+}
+
+.input-warnig {
+  border-color: var(--tk-red);
+  box-shadow: 0 0 0 0.25rem var(--tk-red-v2);
+  background-color: var(--tk-gray-v6);
+}

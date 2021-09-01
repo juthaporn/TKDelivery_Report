@@ -1,0 +1,13 @@
+<svg id="Opac-Trans" xmlns="http://www.w3.org/2000/svg" width="10.407" height="10.88" viewBox="0 0 10.407 10.88">
+  <g id="payment">
+    <path id="Path_142" data-name="Path 142" d="M8.836.2H2.371A1.971,1.971,0,0,0,.4,2.171V8.478a1.971,1.971,0,0,0,1.971,1.971H7.89a1.34,1.34,0,0,0,1.34-1.34V2.247a.394.394,0,0,0-.788,0V9.109a.552.552,0,0,1-.552.552H2.371A1.183,1.183,0,0,1,1.188,8.478V2.171A1.183,1.183,0,0,1,2.371.988H8.836a.394.394,0,0,0,0-.788Z" transform="translate(-0.4 -0.2)" fill="#595959"/>
+    <path id="Path_143" data-name="Path 143" d="M3.88,5.719V3.307h.641v-.15a.2.2,0,0,1,.2-.2H4.9a.2.2,0,0,1,.2.2v.158c.528.05.7.309.7.655a.627.627,0,0,1-.222.461.629.629,0,0,1,.353.585c0,.371-.217.666-.781.7l-.109,0H5.1v.2a.2.2,0,0,1-.2.2H4.718a.2.2,0,0,1-.2-.2v-.2H3.88Zm1.094-.968H4.448v.468h.526c.229,0,.343-.079.343-.235C5.317,4.807,5.2,4.751,4.974,4.751ZM4.936,3.8H4.448v.5h.488c.246,0,.322-.075.322-.263,0-.163-.1-.241-.322-.241Z" transform="translate(-1.594 -1.147)" fill="#595959"/>
+    <rect id="Rectangle_135" data-name="Rectangle 135" width="2.365" height="0.657" rx="0.328" transform="translate(2.286 6.071)" fill="#595959"/>
+    <rect id="Rectangle_136" data-name="Rectangle 136" width="4.573" height="0.657" rx="0.328" transform="translate(2.286 7.332)" fill="#595959"/>
+    <g id="Ellipse_19" data-name="Ellipse 19" transform="translate(4.415 4.888)" fill="red" stroke="#fff" stroke-width="1.2">
+      <circle cx="2.996" cy="2.996" r="2.996" stroke="none"/>
+      <circle cx="2.996" cy="2.996" r="2.396" fill="none"/>
+    </g>
+    <path id="Path_144" data-name="Path 144" d="M11.56,10.773v1.016a.315.315,0,0,0,.315.315h.917" transform="translate(-4.228 -3.827)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.2" fill-rule="evenodd"/>
+  </g>
+</svg>

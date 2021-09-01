@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="WALAI AutoLib">
+    <meta name="generator" content="WALAI AutoLib 1.0.0.0">
+    <title>Location</title>
+
+    <!-- TK Font CSS -->
+    <link href="../assets/fonts/fonts.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Bootstrap Icon Font CSS -->
+    <link href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .form-control-btn {
+            position: static;
+            z-index: 10;
+            display: inherit;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 2.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #aaa;
+            margin-left: -30px !important;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+
+    <link href="../assets/css/walai.css" rel="stylesheet">
+    <link href="../assets/css/colors.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--icon alert-->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+      </svg>
+      <!--End icon alert-->
+
+    <header class="navbar sticky-top  flex-md-nowrap p-0 navbar-light bg-white " style="z-index: 99 !important;">
+
+          <!-- Toast message -->
+          <div class="position-fixed top-0 start-50 translate-middle" style="margin-top: 5rem !important">
+            <div class="toast align-items-center bg-dark text-white" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        บันทึกเรียบร้อยแล้ว
+                    </div>
+                    <button type="button" class="btn-close me-2 m-auto text-white"  data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!-- End Toast message -->
+
+
+
+        <nav class="container navbar-expand-lg" style="max-width: 1000px;">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0" href="#">
+                <img class="navbar-brand-logo" src="../assets/brand/Logo@2x.png">
+            </a>
+
+            <button class="navbar-toggler position-absolute d-md-none collapsed border-0" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <ul class="nav justify-content-end w-100 d-none d-md-flex">
+
+                <li class="nav-link" style="padding-top: 1rem; padding-bottom: .02rem;">
+                    <a class="btn btn-danger btn-sm rounded-pill header-button tk-overflow-wrap" style="height: 24px; max-width: 110px;"> <i class="bi bi-person-fill"></i> User123</a>
+                </li>
+                <li class="w-100 text-end" style="padding-top: .02rem;">
+                    <a class="nav-link disabled header-text" href="#" tabindex="-1" aria-disabled="true" i role="button">
+                        <i class="bi bi-geo-alt"></i>
+                        <!--<img src="../assets/img/Location Administrator.svg" style="padding-bottom: 4px;">-->TK park Bangkok
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="container master-container">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse tk-dark-v1">
+                <ul class=" nav justify-content-between w-100 d-md-none " style="margin-top: 1rem ">
+
+                    <li class="nav-link ">
+                        <a class="btn btn-danger btn-sm rounded-pill header-button "> <i class="bi bi-person-fill "></i> User123</a>
+                    </li>
+                    <li class="text-end" style="padding-top: .2rem; ">
+                        <a class="nav-link disabled header-text" href="# " tabindex="-1 " aria-disabled="true " role="button ">
+                            <i class="bi bi-geo-alt"></i>
+                            <!-- <img src="../assets/img/Location Administrator.svg " style="padding-bottom: 4px; ">-->TK park Bangkok
+                        </a>
+                    </li>
+                </ul>
+
+                <hr class="d-md-none ">
+
+                <div class="position-sticky pt-md-3 ">
+
+                    <a class="nav-link sidebar-heading" href="#">
+                        <i class="bi bi-truck sidebarMenu-icon"></i> TK Book Delivery
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/Ordersent.html">
+                                <span class="float-start"><i class="bi bi-tag-fill sidebarMenu-icon"></i> รายการใหม่ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/AcceptedOrder.html">
+                                <span class="float-start"><i class="bi bi-file-earmark-check sidebarMenu-icon"></i> กำลังดำเนินการ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/WaitingForPayment.html">
+                                <span class="float-start"><i class="bi bi-hourglass-split  sidebarMenu-icon"></i> รอชำระเงิน </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li> 
+                        <li class="nav-item">
+
+                            <a class="btn w-100 sidebarMenu-li" href="../html/ReceivedPayment.html">
+                                <span class="float-start"><i class="bi bi-receipt sidebarMenu-icon"></i> ตรวจสอบการชำระเงิน </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+
+                       </li>
+                        <li class="nav-item ">
+                            
+                            <a class="btn w-100 sidebarMenu-li" href="../html/PrepareForTransis.html">
+                                <span class="float-start"><i class="bi bi-box-seam  sidebarMenu-icon"></i> เตรียมจัดส่ง </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/InTransit.html">
+                                <span class="float-start"><i class="bi bi-truck sidebarMenu-icon"></i> อยู่ระหว่างการจัดส่ง </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/PickupOrder.html">
+                                <span class="float-start"><i class="bi bi-geo-fill  sidebarMenu-icon"></i> รอให้มารับ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+
+                        </li>
+                    </ul>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="../html/History.html">
+                        <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
+                    </a>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="#">
+                        <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Configuration.html">
+                                <i class="bi bi-tools sidebarMenu-icon"></i> การตั้งค่า
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li sidebarMenu-li-active" href="../html/Location.html">
+                                <i class="bi bi-bank2 sidebarMenu-icon"></i> สาขาห้องสมุด
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="# ">
+                        <i class="bi bi-geo-alt-fill sidebarMenu-icon"></i> ผู้ดูแลระบบประจำสาขา
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link sidebarMenu-li " href="../html/Parameter.html">
+                                <i class="bi bi-gear-fill sidebarMenu-icon"></i> พารามิเตอร์
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../html/Agreement.html">
+                                <i class="bi bi-clipboard-check sidebarMenu-icon"></i> เงื่อนไขการให้บริการ
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link sidebarMenu-li " href="../html/MemberType.html">
+                                <i class="bi bi-file-person-fill sidebarMenu-icon"></i> ประเภทสมาชิก
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Holiday.html">
+                                <i class="bi bi-life-preserver sidebarMenu-icon"></i> วันหยุด
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link sidebarMenu-li " href="../html/OpenDateTime.html">
+                                <i class="bi bi-calendar3-week sidebarMenu-icon"></i> เวลาทำการ
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/ItemStatus.html ">
+                                <i class="bi bi-check-circle-fill sidebarMenu-icon "></i> สถานะทรัพยากร
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/ItemClass.html ">
+                                <i class="bi bi-inboxes-fill sidebarMenu-icon "></i> ประเภททรัพยากร
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Collection.html ">
+                                <i class="bi bi-grid-1x2-fill sidebarMenu-icon "></i> คอลเลคชัน
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../html/LogisticArea.html ">
+                                <i class="bi bi-geo-fill sidebarMenu-icon "></i> พื้นที่จัดส่ง
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../html/LogisticCompany.html ">
+                                <i class="bi bi-building sidebarMenu-icon "></i> ตั้งค่าการจัดส่ง
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="text-center mt-3 mb-5">
+                    <a href="../Login.html"
+                        class="btn btn-outline-danger rounded-pill sidebarMenu-li py-1">ออกจากระบบ</a>
+                </div>
+            </nav>
+
+
+            
+                    <!-- Modal filter-->
+                    <div class="modal  fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header tk-modal-header">
+                                    <div class="col-auto">
+                                        <h6 class="modal-title  fw-bold" id="filterModalLabel">กรองสาขา</h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-sm tk-bg-red text-white rounded-pill mt-1 mx-auto" style="font-size: 10px;">
+                                            <i class="bi bi-eraser-fill"></i> Clear
+                                        </button>
+                                        <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close">
+                                        </a>
+                                    </div>
+
+                    
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <fieldset>
+                                            <div class="mb-3">
+                                                <label for="disabledTextInput01" class="form-label">ชื่อเต็ม</label>
+                                                <input type="text" id="disabledTextInput01" class="form-control rounded-pill tk-form-control" placeholder="ระบุชื่อเต็ม">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="disabledTextInput02" class="form-label">ชื่อย่อ</label>
+                                                <input type="text" id="disabledTextInput02" class="form-control rounded-pill tk-form-control" placeholder="ระบุชื่อย่อ">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">สถานะการให้บริการ</label>
+                                                <div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                        <label class="form-check-label" for="inlineCheckbox1">เปิด</label>
+                                                      </div>
+                                                      <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox2">ปิด</label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                
+
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="modal-footer tk-modal-footer">
+                                    <a class="btn tk-modal-footer-button text-white w-100" data-bs-dismiss="modal" aria-label="Close">กรอง</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal  Admin-->
+                    <div class="modal  fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header tk-modal-header">
+                                    <h6 class="modal-title  fw-bold" id="adminModalLabel">TK Park Bangkok</h6>
+                                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close">
+                                    </a>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="alert d-flex align-items-center bg-dark text-white tk-rounded-10" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                        <div>
+                                            บันทึกเรียบร้อยแล้ว
+                                        </div>
+                                      </div>
+                                    <form>
+                                        <fieldset>
+                                            <div class="mb-3">
+                                                <label for="disabledTextInput" class="form-label">Librarian</label>
+                                                <div class="input-group">
+                                                    <input id="myInput01" type="text" class="form-control tk-form-control rounded-pill " placeholder="Search librarian">
+                                                    <span class="form-control-btn">
+                                                        <i class="bi bi-search"></i>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </form>
+                                    <div>
+                                        <span class="badge rounded-pill tk-badge border border-danger">
+                                            Adam Smith
+                                            <i class="bi bi-x-circle tk-red"></i>
+                                            
+                                        </span>
+                                        <span class="badge rounded-pill tk-badge border border-danger">
+                                            Leonado davince
+                                            <i class="bi bi-x-circle tk-red"></i>
+                                        </span>
+                                        <span class="badge rounded-pill tk-badge border border-danger">
+                                            Michel Jordan
+                                            <i class="bi bi-x-circle tk-red"></i>
+                                        </span>
+                                    </div>
+
+                                    <form class="mt-4">
+                                        <fieldset>
+                                            <div class="mb-3">
+                                                <label for="disabledTextInput" class="form-label">Administrator</label>
+                                                <div class="input-group">
+                                                    <input id="myInput02" type="text" class="form-control tk-form-control rounded-pill " placeholder="Search Administrator">
+                                                    <span class="form-control-btn">
+                                                        <i class="bi bi-search"></i>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </form>
+                                    <div>
+                                        <span class="badge rounded-pill tk-badge border border-danger">
+                                            Adam Smith
+                                            <i class="bi bi-x-circle tk-red"></i>
+                                            
+                                        </span>
+                                        <span class="badge rounded-pill tk-badge border border-danger">
+                                            Leonado davince
+                                            <i class="bi bi-x-circle tk-red"></i>
+                                        </span>
+                                        <span class="badge rounded-pill tk-badge border border-danger">
+                                            Michel Jordan
+                                            <i class="bi bi-x-circle tk-red"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer tk-modal-footer">
+                                    <a class="btn tk-modal-footer-button text-white w-100" id="showToast" data-bs-dismiss="modal" aria-label="Close">ปิด</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal  ItemClass-->
+                    <div class="modal  fade" id="ItemClassModal" tabindex="-1" aria-labelledby="ItemClassModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header tk-modal-header">
+                                    <h6 class="modal-title  fw-bold" id="ItemClassModalLabel">TK Park Bangkok</h6>
+                                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close">
+                                    </a>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="alert d-flex align-items-center bg-dark text-white tk-rounded-10" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                        <div>
+                                            บันทึกเรียบร้อยแล้ว
+                                        </div>
+                                      </div>
+                                    <form>
+                                        <fieldset>
+                                            <div class="mb-3">
+                                                <label for="disabledTextInput" class="form-label">Item Class</label>
+                                                <div class="input-group">
+                                                    <input id="myInput03" type="text" class="form-control tk-form-control rounded-pill " placeholder="Search Item Class">
+                                                    <span class="form-control-btn">
+                                                        <i class="bi bi-search"></i>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </form>
+                                    <div>
+                                        <div class="badge rounded-pill tk-badge border border-danger w-100 text-start">
+                                            Reading for Thai TK Park
+                                            <span class="sidebarMenu-badge">
+                                                <a  class="tk-a"><i
+                                                        class="i bi-x-circle tk-red "></i></a>
+                                            </span>
+                                        </div>
+                                        <div class="badge rounded-pill tk-badge border border-danger w-100 text-start">
+                                            General Book Thai
+                                            <span class="sidebarMenu-badge">
+                                                <a  class="tk-a"><i
+                                                        class="i bi-x-circle tk-red "></i></a>
+                                            </span>
+                                        </div>
+                                        <div class="badge rounded-pill tk-badge border border-danger w-100 text-start">
+                                            Music & Art
+                                            <span class="sidebarMenu-badge">
+                                                <a  class="tk-a"><i
+                                                        class="i bi-x-circle tk-red "></i></a>
+                                            </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer tk-modal-footer">
+                                    <a class="btn tk-modal-footer-button text-white w-100" id="showToastItemclass" data-bs-dismiss="modal" aria-label="Close">ปิด</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+            <main class="col-md-8 ms-sm-auto col-lg-9 px-md-4 " style="margin-top: 20px; ">
+                <div class="card">
+                    <div class="card-header walai-card-header">
+                        สาขาห้องสมุด 
+                        <span class="sidebarMenu-badge">
+                            
+                            <!--non-Filter  
+                                <a data-bs-toggle="modal" data-bs-target="#filterModal" class="tk-a"><i
+                                class="bi bi-funnel-fill tk-gray-v2"></i></a>
+                            non-Filter -->
+
+                            <a data-bs-toggle="modal" data-bs-target="#filterModal" class="tk-a"><i
+                                    class="bi bi-funnel-fill tk-red"></i></a>
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="card-body my-3">
+                        <div class="form-check form-switch border-bottom pb-3 mb-3">
+                            <input class="form-check-input flexSwitchCheckChecked" type="checkbox" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">TK park Bangkok</label>
+
+                            <span class="sidebarMenu-badge">
+                                <a data-bs-toggle="modal" data-bs-target="#adminModal" class="me-2 tk-a"><i
+                                        class="bi bi-person-fill tk-red "></i></a>
+                                        <a data-bs-toggle="modal" data-bs-target="#ItemClassModal" class="me-2 tk-a">
+                                            <i class="bi bi-inboxes-fill tk-red "></i></a>
+                            </span>
+                        </div>
+                       
+                        <div class="form-check form-switch border-bottom pb-3 mb-3">
+                            <input class="form-check-input flexSwitchCheckChecked" type="checkbox" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">TK park Hat Yai</label>
+
+                            <span class="sidebarMenu-badge">
+                                <a data-bs-toggle="modal" data-bs-target="#adminModal" class="me-2 tk-a"><i
+                                        class="bi bi-person-fill tk-red "></i></a>
+                                        <a data-bs-toggle="modal" data-bs-target="#ItemClassModal" class="me-2 tk-a">
+                                            <i class="bi bi-inboxes-fill tk-red "></i></a>
+                            </span>
+                        </div>
+                     
+
+                        <div class="form-check form-switch border-bottom pb-3 mb-3">
+                            <input class="form-check-input flexSwitchCheckChecked" type="checkbox" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">TK park Lampang</label>
+
+                            <span class="sidebarMenu-badge">
+                                <a data-bs-toggle="modal" data-bs-target="#adminModal" class="me-2 tk-a"><i
+                                        class="bi bi-person-fill tk-red "></i></a>
+                                        <a data-bs-toggle="modal" data-bs-target="#ItemClassModal" class="me-2 tk-a">
+                                            <i class="bi bi-inboxes-fill tk-red "></i></a>
+                            </span>
+                        </div>
+                      
+                        <!--กรณี Disable toggle-->
+                        <div class="form-check form-switch border-bottom pb-3 mb-3">
+                            <input class="form-check-input flexSwitchCheckChecked" type="checkbox">
+                            <label class="form-check-label tk-gray-v2" for="flexSwitchCheckChecked">TK park Rayong</label>
+
+                            <span class="sidebarMenu-badge">
+                                <a data-bs-toggle="modal" data-bs-target="#adminModal" class="me-2 tk-a"><i
+                                        class="bi bi-person-fill tk-gray-v2"></i></a>
+                                        <a data-bs-toggle="modal" data-bs-target="#ItemClassModal" class="me-2 tk-a">
+                                            <i class="bi bi-inboxes-fill tk-gray-v2"></i></a>
+                            </span>
+                        </div>
+
+                        <!--กรณี Disable toggle-->
+
+                    </div>
+
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function() {
+
+            $("#showToast").click(function() {
+                $('.toast').toast('show');
+            });
+
+        });
+    </script>
+
+
+    <script>
+          $(document).ready(function() {
+            /*show modal  --> showtoast ของ modal staff , showToastItemclass ของ modal item class*/
+            $("#showToast").click(function() {
+                $('.toast').toast('show');
+            });
+
+
+            $("#showToastItemclass").click(function() {
+                $('.toast').toast('show');
+            });
+
+        });
+
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) {
+                    return false;
+                }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("click", function(e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function(e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function(e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre & Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts & Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("myInput"), countries);
+    </script>
+</body>
+
+</html>

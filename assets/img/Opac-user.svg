@@ -1,0 +1,11 @@
+<svg id="Opac-user" xmlns="http://www.w3.org/2000/svg" width="8.99" height="11.212" viewBox="0 0 8.99 11.212">
+  <g id="profile">
+    <path id="Path_139" data-name="Path 139" d="M10.913,8.027A2.153,2.153,0,1,0,8.76,5.873,2.153,2.153,0,0,0,10.913,8.027Zm0-.8a1.356,1.356,0,1,1,1.356-1.356A1.356,1.356,0,0,1,10.913,7.229Z" transform="translate(-6.527 -3.72)" fill="#595959"/>
+    <g id="Group_431" data-name="Group 431" transform="translate(0 4.626)">
+      <path id="Path_140" data-name="Path 140" d="M4.387,0A4.387,4.387,0,0,1,8.773,4.387c0,.681-.545,1.192-1.362,1.534l-.189-.763c.475-.214.754-.483.754-.771a3.589,3.589,0,1,0-7.178,0c0,.665,1.483,1.226,3.448,1.252h.141a9.663,9.663,0,0,0,1.449-.1l.193.769C3.453,6.741,0,6.1,0,4.387A4.387,4.387,0,0,1,4.387,0Z" fill="#595959"/>
+      <path id="Path_141" data-name="Path 141" d="M10.714,6.1q1.118-.433,1.034-1.374a3.946,3.946,0,0,0-1.68-3.035" transform="translate(-3.377 -0.568)" fill="none" stroke="red" stroke-linecap="round" stroke-width="1.224" fill-rule="evenodd"/>
+    </g>
+    <circle id="Ellipse_17" data-name="Ellipse 17" cx="0.665" cy="0.665" r="0.665" transform="translate(5.237 9.882)"/>
+    <circle id="Ellipse_18" data-name="Ellipse 18" cx="0.665" cy="0.665" r="0.665" transform="translate(6.673 9.496)" fill="red"/>
+  </g>
+</svg>

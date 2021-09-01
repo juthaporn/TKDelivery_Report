@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="WALAI AutoLib">
+    <meta name="generator" content="WALAI AutoLib 1.0.0.0">
+    <title>Parameter</title>
+
+    <!-- TK Font CSS -->
+    <link href="../assets/fonts/fonts.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Bootstrap Icon Font CSS -->
+    <link href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .form-control-btn {
+            position: static;
+            z-index: 10;
+            display: inherit;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 2.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #aaa;
+            margin-left: -30px !important;
+        }
+
+
+
+        /* style selector payment*/
+        
+        .tk-form-select {
+            display: none;
+        }
+        
+        #displaySelect,  #displaySelect01{
+            padding-left: 0px;
+        }
+        
+        #displaySelect img, #displaySelect01 img,
+        .btn-select img {
+            width: 24px;
+        }
+        
+        #displaySelect li, #displaySelect01 li {
+            list-style: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        
+        #displaySelect li:hover, #displaySelect01 li:hover {
+            background-color: #F4F3F3;
+        }
+        
+        #displaySelect li img, #displaySelect01 li img {
+            margin: 5px;
+        }
+        .form-displaySelect {
+            display: none;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: 5px;
+        }
+        
+        .open {
+            display: show !important;
+        }
+        
+        .btn-select {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 350px;
+            height: 34px;
+            border-radius: 5px;
+            /* background-color: #fff;
+            border: 1px solid #ccc; */
+        }
+        
+        .btn-select li {
+            list-style: none;
+            float: left;
+            padding-bottom: 0px;
+        }
+        
+        .btn-select:hover li {
+            margin-left: 0px;
+        }
+        
+        .btn-select:hover {
+            background-color: #F4F3F3;
+            border: 1px solid transparent;
+            box-shadow: inset 0 0px 0px 1px #ccc;
+        }
+        
+        .btn-select:focus {
+            outline: none;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+
+    <link href="../assets/css/walai.css" rel="stylesheet">
+    <link href="../assets/css/colors.css" rel="stylesheet">
+
+</head>
+</head>
+
+<body>
+
+  
+
+
+    <header class="navbar sticky-top  flex-md-nowrap p-0 navbar-light bg-white " style="z-index: 99 !important;">
+
+        <!-- Toast message -->
+        <div class="position-fixed top-0 start-50 translate-middle" style="margin-top: 5rem !important">
+            <div class="toast align-items-center bg-dark text-white" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        บันทึกเรียบร้อยแล้ว
+                    </div>
+                    <button type="button" class="btn-close me-2 m-auto text-white"  data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!-- End Toast message -->
+
+
+
+
+
+        <nav class="container navbar-expand-lg" style="max-width: 1000px;">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0" href="#">
+                <img class="navbar-brand-logo" src="../assets/brand/Logo@2x.png">
+            </a>
+
+            <button class="navbar-toggler position-absolute d-md-none collapsed border-0" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <ul class="nav justify-content-end w-100 d-none d-md-flex">
+
+                <li class="nav-link" style="padding-top: 1rem; padding-bottom: .02rem;">
+                    <a class="btn btn-danger btn-sm rounded-pill header-button tk-overflow-wrap" style="height: 24px; max-width: 110px;"> <i class="bi bi-person-fill"></i> User123</a>
+                </li>
+                <li class="w-100 text-end" style="padding-top: .02rem;">
+                    <a class="nav-link disabled header-text" href="#" tabindex="-1" aria-disabled="true" i role="button">
+                        <i class="bi bi-geo-alt"></i>
+                        <!--<img src="../assets/img/Location Administrator.svg" style="padding-bottom: 4px;">-->TK park Bangkok
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+<!--data select payment -->
+    <select class="tk-form-select" >
+        <option class="tk-form-control tk-gray-v1" value="select" >เลือกธนาคาร</option>
+        <option class="tk-form-control tk-gray-v1" value="ktb" data-thumbnail="../assets/img/ktb.png">Krung thai bank</option>
+        <option class="tk-form-control tk-gray-v1" value="scb" data-thumbnail="../assets/img/scb.png">SCB</option>
+    </select>
+
+
+  
+
+    <!-- Modal Add Bank-->
+    <div class="modal  fade" id="addBankModal" tabindex="-1" aria-labelledby="addBankModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header tk-modal-header py-2">
+                    <h6 class="modal-title fw-bold" id="addBankModalLabel">เพิ่มบัญชี</h6>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close">
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <fieldset>
+                            <div class="mb-3">
+                                <label for="ddlAddpayment01" class="form-label ">ธนาคาร</label>
+                                <span id="ddlAddpayment01" class="btn-select form-select tk-form-control tk-gray-v1 pb-2 pt-1 my-auto" value=""> </span> 
+
+                                <div class="form-displaySelect" for="ddlAddpayment01">
+                                    <ul id="displaySelect01"></ul>
+                                </div>
+
+
+                             
+
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="inpAddpayment02" class="form-label">ชื่อบัญชี</label>
+                                <input type="text" id="inpAddpayment02" class="form-control tk-form-control" placeholder="ระบุชื่อบัญชี">
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="inpAddpayment02" class="form-label">เลขบัญชี</label>
+                                <input type="text" id="inpAddpayment02" class="form-control tk-form-control" placeholder="ระบุชื่อบัญชี">
+                            </div>
+
+                            
+                            <div class="mb-3">
+                                <label for="inpAddpayment02" class="form-label"><i class="bi bi-upload"></i> QR Code</label>
+                                <input class="form-control tk-form-control tk-rounded-10" type="file" id="formFile">
+                              </div>
+    
+    
+    
+                            <!-- <div class="text-center ">
+                                <img src="../assets/img/qr-code.png ">
+                            </div> -->
+    
+                           
+                            
+
+                        </fieldset>
+
+                        <!-- <a class="btn btn-danger btn-sm rounded-pill tk-button-01 "><i class="bi bi-upload " style="font-size: 14px; margin-right: 4px; "></i> QR Code</a> -->
+
+                      
+
+                        <div class="form-check form-switch ms-2 mt-3 ">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked02">
+                            <label class="form-check-label" for="flexSwitchCheckChecked02">เปิดการใช้งาน</label>
+                        </div>
+                       
+                    </form>
+                </div>
+                <div class="modal-footer tk-modal-footer">
+                    <a class="btn btn-danger tk-modal-footer-button w-100 " id="showToast"  data-bs-dismiss="modal" aria-label="Close">เพิ่ม</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+
+    <!-- Modal Edit Bank-->
+    <div class="modal  fade" id="editBankModal" tabindex="-1" aria-labelledby="editBankModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header tk-modal-header py-2">
+                    <h6 class="modal-title fw-bold" id="editBankModalLabel">แก้ไขบัญชี</h6>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close">
+                    </a>
+                </div>
+                <div class="modal-body ">
+                    <form>
+                        <fieldset>
+                            <div class="mb-3 lang-select">
+                                <label for="ddlPayment01" class="form-label ">ธนาคาร</label>
+                                <span id="ddlPayment01" class="btn-select form-select tk-form-control tk-gray-v1 pb-2 pt-1 my-auto" value=""> </span> 
+
+                                <div class="form-displaySelect" for="ddlPayment01">
+                                    <ul id="displaySelect"></ul>
+                                </div>
+
+
+                          
+ 
+
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="inpPayment02" class="form-label ">ชื่อบัญชี</label>
+                                <input type="text" id="inpPayment02" class="form-control tk-form-control tk-gray-v1" value="TK BKK " placeholder="ระบุชื่อบัญชี ">
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="inpPayment03" class="form-label ">เลขบัญชี</label>
+                                <input type="text" id="inpPayment03" class="form-control tk-form-control tk-gray-v1" value="1234567890 " placeholder="ระบุเลขบัญชี ">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="inpAddpayment02" class="form-label"><i class="bi bi-upload"></i> QR Code</label>
+                                <input class="form-control tk-form-control tk-rounded-10" type="file" id="formFile">
+
+                                <div class="text-center ">
+                                    <img src="../assets/img/qr-code.png ">
+                                </div>
+                              </div>
+                              
+
+                        </fieldset>
+
+                        <!-- <a class="btn btn-danger btn-sm rounded-pill tk-button-01 "><i class="bi bi-upload " style="font-size: 14px; margin-right: 4px; "></i> QR Code</a> -->
+
+
+
+                        
+
+                        <div class="form-check form-switch ms-2 mt-3 ">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked02">
+                            <label class="form-check-label" for="flexSwitchCheckChecked02">เปิดการใช้งาน</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer tk-modal-footer ">
+                    <a class="btn btn-danger tk-modal-footer-button w-100 "  id="showToast" data-bs-dismiss="modal" aria-label="Close">บันทึก</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container master-container ">
+        <div class="row ">
+            <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse tk-dark-v1 ">
+                <ul class=" nav justify-content-between w-100 d-md-none " style="margin-top: 1rem ">
+
+                    <li class="nav-link ">
+                        <a class="btn btn-danger btn-sm rounded-pill header-button "> <i class="bi bi-person-fill "></i> User123</a>
+                    </li>
+                    <li class="text-end " style="padding-top: .2rem; ">
+                        <a class="nav-link disabled header-text " href="# " tabindex="-1 " aria-disabled="true " role="button ">
+                            <i class="bi bi-geo-alt-fill "></i>
+                            <!-- <img src="../assets/img/Location Administrator.svg " style="padding-bottom: 4px; ">-->TK park Bangkok
+                        </a>
+                    </li>
+                </ul>
+
+                <hr class="d-md-none ">
+
+                <div class="position-sticky pt-md-3 ">
+
+                    <a class="nav-link sidebar-heading" href="#">
+                        <i class="bi bi-truck sidebarMenu-icon"></i> TK Book Delivery
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item">
+                            <a class="btn w-100 sidebarMenu-li " href="../html/Ordersent.html">
+                                <span class="float-start"><i class="bi bi-tag-fill sidebarMenu-icon"></i> รายการใหม่ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/AcceptedOrder.html">
+                                <span class="float-start"><i class="bi bi-file-earmark-check sidebarMenu-icon"></i> กำลังดำเนินการ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/WaitingForPayment.html">
+                                <span class="float-start"><i class="bi bi-hourglass-split  sidebarMenu-icon"></i> รอชำระเงิน </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li> 
+                        <li class="nav-item">
+
+                            <a class="btn w-100 sidebarMenu-li" href="../html/ReceivedPayment.html">
+                                <span class="float-start"><i class="bi bi-receipt sidebarMenu-icon"></i> ตรวจสอบการชำระเงิน </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+
+                       </li>
+                        <li class="nav-item ">
+                            
+                            <a class="btn w-100 sidebarMenu-li" href="../html/PrepareForTransis.html">
+                                <span class="float-start"><i class="bi bi-box-seam  sidebarMenu-icon"></i> เตรียมจัดส่ง </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/InTransit.html">
+                                <span class="float-start"><i class="bi bi-truck sidebarMenu-icon"></i> อยู่ระหว่างการจัดส่ง </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="btn w-100 sidebarMenu-li" href="../html/PickupOrder.html">
+                                <span class="float-start"><i class="bi bi-geo-fill  sidebarMenu-icon"></i> รอให้มารับ </span>
+                                <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
+                            </a>
+
+
+                        </li>
+                    </ul>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="../html/History.html">
+                        <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
+                    </a>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="#">
+                        <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Configuration.html">
+                                <i class="bi bi-tools sidebarMenu-icon"></i> การตั้งค่า
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Location.html">
+                                <i class="bi bi-bank2 sidebarMenu-icon"></i> สาขาห้องสมุด
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <a class="nav-link sidebar-heading" href="# ">
+                        <i class="bi bi-geo-alt-fill sidebarMenu-icon"></i> ผู้ดูแลระบบประจำสาขา
+                    </a>
+                    <ul class="nav flex-column ms-md-4 mx-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link sidebarMenu-li sidebarMenu-li-active" href="../html/Parameter.html">
+                                <i class="bi bi-gear-fill sidebarMenu-icon"></i> พารามิเตอร์
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../html/Agreement.html">
+                                <i class="bi bi-clipboard-check sidebarMenu-icon"></i> เงื่อนไขการให้บริการ
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link sidebarMenu-li" href="../html/MemberType.html">
+                                <i class="bi bi-file-person-fill sidebarMenu-icon"></i> ประเภทสมาชิก
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Holiday.html">
+                                <i class="bi bi-life-preserver sidebarMenu-icon"></i> วันหยุด
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link sidebarMenu-li" href="../html/OpenDateTime.html">
+                                <i class="bi bi-calendar3-week sidebarMenu-icon"></i> เวลาทำการ
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/ItemStatus.html ">
+                                <i class="bi bi-check-circle-fill sidebarMenu-icon "></i> สถานะทรัพยากร
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/ItemClass.html ">
+                                <i class="bi bi-inboxes-fill sidebarMenu-icon "></i> ประเภททรัพยากร
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/Collection.html ">
+                                <i class="bi bi-grid-1x2-fill sidebarMenu-icon "></i> คอลเลคชัน
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li " href="../html/LogisticArea.html ">
+                                <i class="bi bi-geo-fill sidebarMenu-icon "></i> พื้นที่จัดส่ง
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link sidebarMenu-li" href="../html/LogisticCompany.html ">
+                                <i class="bi bi-building sidebarMenu-icon "></i> ตั้งค่าการจัดส่ง
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="text-center mt-3 mb-5">
+                    <a href="../Login.html"
+                        class="btn btn-outline-danger rounded-pill sidebarMenu-li py-1">ออกจากระบบ</a>
+                </div>
+            </nav>
+
+
+            <main class="col-md-8 ms-sm-auto col-lg-9 px-md-4 " style="margin-top: 20px; ">
+                <div class="card ">
+                    <div class="card-header walai-card-header ">
+                        พารามิเตอร์
+                    </div>
+
+
+
+                    <div class="card-body my-3 mx-2"> <!-- mx-2 ใช้เฉพาะหน้า parameter -->
+                     
+                        <p class="tk-head-line mb-3"><span class="ps-0 pe-2">ตั้งค่าการชำระเงิน</span></p>
+
+                        <div class="ps-4 mb-5">
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input flexSwitchCheckDefault" type="checkbox" checked>
+                                <label class="form-check-label" for="flexSwitchCheckDefault">My TK</label>
+                            </div>
+
+
+                            <div class="form-check form-switch ">
+                                <input class="form-check-input flexSwitchCheckDefault" type="checkbox" checked>
+                                <label class="form-check-label" for="flexSwitchCheckDefault">ชำระผ่านธนาคาร</label>
+
+                                <span class="sidebarMenu-badge ">
+                                    <a data-bs-toggle="modal" data-bs-target="#addBankModal" class="tk-a" ><i class="bi bi-plus-circle-fill tk-red walai-icon"></i></a>
+                                </span>
+                            </div>
+
+                             <!--กรณีไม่มีรายการบัญชี flexSwitchCheckChecked02-->
+                             <span class="tk-red ps-4 mb-3"><i class="bi bi-exclamation-circle-fill ms-3"></i>  ไม่มีรายการบัญชี กรุณาเพิ่มบัญชี</span>
+                             <!--End กรณีไม่มีรายการบัญชี-->
+
+                            <div id="tableChecked02" for="flexSwitchCheckDefault" class="mt-2 ms-md-5">
+
+                                <div class="row border-bottom py-2">
+
+                                    <div class="col-8 col-md-4 order-1 order-md-1 pe-0"><img src="../assets/img/ktb.png" class="pb-1" style="max-width: 24px;" /> 
+                                        <span class="my-auto ms-2">Krung Thai bank</span></div>
+                                    <div class="col-12 col-md-2 col-lg-3 order-3 order-md-2 ps-5 ps-md-0">TK BKK</div>
+                                    <div class="col-12 col-md-4 col-lg-3 order-4 order-md-3 ps-5 ps-md-0">1234567890</div>
+                                    <div class="col-4 col-md-2 order-2 order-md-4 ps-0 text-end">
+                                        <a data-bs-toggle="modal" data-bs-target="#editBankModal" class="tk-a"> <i class="bi bi-pencil-square tk-red walai-icon me-2 "></i></a>
+                                        <a><i class="bi bi-x-circle tk-red walai-icon"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <!--กรณีปิดการใช้งาน-->
+                                <div class="row border-bottom py-2 form-text">
+                                
+                                    <div class="col-8 col-md-4 order-1 order-md-1 pe-0" > <img src="../assets/img/scb.png" class="pb-1" style="max-width: 24px; filter: invert(0.30);" /> 
+                                        <span class="my-auto ms-2">SCB</span></div>
+                                    <div class="col-12 col-md-2 col-lg-3 order-3 order-md-2 ps-5 ps-md-0" >TK BKK</div>
+                                    <div class="col-12 col-md-4 col-lg-3 order-4 order-md-3 ps-5 ps-md-0" >8284562139</div>
+                                    <div class="col-4 col-md-2 order-2 order-md-4 ps-0 text-end">
+                                        <a data-bs-toggle="modal" data-bs-target="#editBankModal" class="tk-a" disabled> <i class="bi bi-pencil-square tk-red walai-icon me-2 "></i></a>
+                                        <a><i class="bi bi-x-circle tk-red walai-icon" disabled></i></a>
+                                    </div>
+                                </div>
+                                <!--End กรณีปิดการใช้งาน-->
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="tk-head-line mb-3"><span class="ps-0 pe-2">ยกเลิกรายการอัตโนมัติ</span></p>
+                        
+
+                        <div class="ps-4 mb-5">
+                            <p class="tk-gray-v2">ระบบยกเลิกรายการโดยอัตโนมัติจากระยะเวลาที่กำหนด (เริ่มต้นนับเวลาจากเวลาที่แจ้งค่าจัดส่ง)</p>
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input flexSwitchCheckDefault" type="checkbox" checked>
+                                <label class="form-check-label" for="flexSwitchCheckDefault">เปิดการใช้งาน</label>
+                               
+                            </div>
+
+                           
+                            <input class="form-control tk-form-control ms-4 d-inline" style="max-width: 150px; font-size: 10px; " type="text" id="rejectTime" placeholder="เวลา">
+                            <span class="ps-2 d-inline">นาที</span>
+                                                   
+                        </div>
+
+
+                        <p class="tk-head-line mb-3"><span class="ps-0 pe-2">ที่อยู่ห้องสมุด</span> </p>
+
+                         <!--กรณียังไม่กรอกที่อยู่-->
+                         <span class="tk-red ps-4 mb-3"><i class="bi bi-exclamation-circle-fill"></i> กรุณากรอกที่อยู่</span>
+                         <!--End กรณียังไม่กรอกที่อยู่-->
+
+                        <div class="ps-4 mb-5 mt-3">
+                            <form>
+                                <div class="mb-3 ">
+                                    <textarea class="form-control tk-form-control  " id="exampleFormControlTextarea1" rows="2 " placeholder="ระบุที่อยู่ห้องสมุด "></textarea>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-6 ">
+                                        <fieldset>
+                                            <div class="mb-3 ">
+                                                <label for="inpSubdistric " class="form-label ">แขวง / ตำบล</label>
+                                                <input type="text" id="inpSubdistric" class="form-control tk-form-control  " placeholder="ระบุแขวง / ตำบล ">
+                                            </div>
+                                            <div class="mb-3 ">
+                                                <label for="inpProvince " class="form-label ">จังหวัด</label>
+                                                <input type="text" id="inpProvince" class="form-control tk-form-control  " placeholder="ระบุจังหวัด ">
+                                                <!-- <select id="disabledSelect " class="form-select rounded-pill tk-form-control ">
+                                                            <option>ระบุจังหวัด</option>
+                                                            <option>กรุงเทพ</option>
+                                                            <option>กระบี่</option>
+                                                        </select> -->
+    
+    
+                                            </div>
+    
+                                            <div class="mb-3 ">
+                                                <label for="inpContact" class="form-label ">เบอร์โทรศัพท์</label>
+                                                <input type="text" id="inpContact" class="form-control  tk-form-control " placeholder="ระบุเบอร์โทรศัพท์ ">
+    
+                                            </div>
+    
+    
+    
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-6">
+                                        <fieldset>
+                                            <div class="mb-3">
+                                                <label for="inpDistric" class="form-label">เขต/อำเภอ</label>
+                                                <input type="text" id="inpDistric" class="form-control  tk-form-control " placeholder="ระบุเขต/อำเภอ ">
+                                                <!-- <select id="disabledSelect " class="form-select rounded-pill tk-form-control ">
+                                                    <option>Add District</option>
+                                                    <option>เมือง</option>
+                                                    <option>คลองท่อม</option>
+                                                </select> -->
+                                            </div>
+                                            <div class="mb-3 ">
+                                                <label for="inpPostcode" class="form-label">รหัสไปรษณีย์</label>
+                                                <input type="text" id="inpPostcode" class="form-control  tk-form-control  " placeholder="ระบุรหัสไปรษณีย์ ">
+                                            </div>
+    
+                                            <div class="mb-3 ">
+                                                <label for="inpEmail " class="form-label ">Email</label>
+                                                <input type="text" id="inpEmail" class="form-control tk-form-control " placeholder="ระบุ Email ">
+    
+                                            </div>
+    
+    
+    
+    
+                                        </fieldset>
+                                    </div>
+    
+                                </div>
+                                <div class="text-center "> <a class="btn btn-danger rounded-pill tk-button mt-5 " id="showToast"> บันทึกที่อยู่</a></div>
+                            </form>
+                        </div>
+                      
+
+                      
+
+                    </div>
+
+                      
+
+
+
+
+                        
+                       
+
+                    </div>
+
+
+
+
+                </div>
+
+            </main>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
+
+
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function() {
+
+            $("#showToast ").click(function() {
+                $('.toast').toast('show');
+            });
+
+
+        });
+        // $('#ddlPayment01').click(function() {
+        //     console.log($('#ddlPayment01').attr("value"));
+        // });
+    </script>
+
+
+
+    <script>
+        //test for getting url value from attr
+        // var img1 = $('.test').attr("data-thumbnail");
+        // console.log(img1);
+
+        //create child elements select tag
+        var ddlArray = [];
+        $('.tk-form-select option').each(function() {
+            var img = $(this).attr("data-thumbnail");
+            var text = this.innerText;
+            var value = $(this).val();
+            var item = '<li><img src="' + img + '" alt="" value="' + value + '"/><span>' + text + '</span></li>';
+            ddlArray.push(item);
+        })
+
+        $('#displaySelect01').html(ddlArray);
+        $('#displaySelect').html(ddlArray);
+
+        //Set the button value to the first el of the array
+        $('.btn-select').html(ddlArray[0]);
+        $('.btn-select').attr('value', 'select');
+
+        //change button stuff on click
+        $('#displaySelect li').click(function() {
+            var img = $(this).find('img').attr("src");
+            var value = $(this).find('img').attr('value');
+            var text = this.innerText;
+            var item = '<img class="text-center me-1" src="' + img + '" alt="" />' + '<span class="pb-0 mt-3">'+ text + '</span>' ;
+            $('.btn-select').html(item);
+            $('.btn-select').attr('value', value);
+            $(".form-displaySelect").toggle();
+            //console.log(value);
+        });
+
+        $('#displaySelect01 li').click(function() {
+            var img = $(this).find('img').attr("src");
+            var value = $(this).find('img').attr('value');
+            var text = this.innerText;
+            var item = '<img class="text-center me-1" src="' + img + '" alt="" />' + '<span class="pb-0 mt-3">'+ text + '</span>' ;
+            $('.btn-select').html(item);
+            $('.btn-select').attr('value', value);
+            $(".form-displaySelect").toggle();
+            //console.log(value);
+        });
+
+        $(".btn-select").click(function() {
+            $(".form-displaySelect").toggle();
+        });
+
+        //check local storage 
+        var sessionSelect = localStorage.getItem('lang');
+        if (sessionSelect) {
+            //find an item with value of sessionLang
+            var selectIndex = ddlArray.indexOf(sessionSelect);
+            $('.btn-select').html(ddlArray[selectIndex]);
+            $('.btn-select').attr('value', selectIndex);
+        } else {
+            var langIndex = ddlArray.indexOf('ch');
+            //console.log(selectIndex);
+            $('.btn-select').html(ddlArray[selectIndex]);
+        }
+    </script>
+
+
+
+    <script>
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+
+            if (inp != null) {
+                inp.addEventListener("input", function(e) {
+                    var a, b, i, val = this.value;
+                    /*close any already open lists of autocompleted values*/
+                    closeAllLists();
+                    if (!val) {
+                        return false;
+                    }
+                    currentFocus = -1;
+                    /*create a DIV element that will contain the items (values):*/
+                    a = document.createElement("DIV");
+                    a.setAttribute("id", this.id + "autocomplete-list");
+                    a.setAttribute("class", "autocomplete-items");
+                    /*append the DIV element as a child of the autocomplete container:*/
+                    this.parentNode.appendChild(a);
+                    /*for each item in the array...*/
+                    for (i = 0; i < arr.length; i++) {
+                        /*check if the item starts with the same letters as the text field value:*/
+                        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                            /*create a DIV element for each matching element:*/
+                            b = document.createElement("DIV");
+                            /*make the matching letters bold:*/
+                            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                            b.innerHTML += arr[i].substr(val.length);
+                            /*insert a input field that will hold the current array item's value:*/
+                            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                            /*execute a function when someone clicks on the item value (DIV element):*/
+                            b.addEventListener("click", function(e) {
+                                /*insert the value for the autocomplete text field:*/
+                                inp.value = this.getElementsByTagName("input")[0].value;
+                                /*close the list of autocompleted values,
+                                (or any other open lists of autocompleted values:*/
+                                closeAllLists();
+                            });
+                            a.appendChild(b);
+                        }
+                    }
+                });
+                /*execute a function presses a key on the keyboard:*/
+                inp.addEventListener("keydown", function(e) {
+                    var x = document.getElementById(this.id + "autocomplete-list");
+                    if (x) x = x.getElementsByTagName("div");
+                    if (e.keyCode == 40) {
+                        /*If the arrow DOWN key is pressed,
+                        increase the currentFocus variable:*/
+                        currentFocus++;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                    } else if (e.keyCode == 38) { //up
+                        /*If the arrow UP key is pressed,
+                        decrease the currentFocus variable:*/
+                        currentFocus--;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                    } else if (e.keyCode == 13) {
+                        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                        e.preventDefault();
+                        if (currentFocus > -1) {
+                            /*and simulate a click on the "active" item:*/
+                            if (x) x[currentFocus].click();
+                        }
+                    }
+                });
+            }
+
+
+
+
+
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function(e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre & Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts & Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("myInput"), countries);
+    </script>
+</body>
+
+</html>
+
+</html>

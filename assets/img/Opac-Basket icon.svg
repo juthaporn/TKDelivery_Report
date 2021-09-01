@@ -1,0 +1,16 @@
+<svg id="Opac-Basket_icon" data-name="Opac-Basket icon" xmlns="http://www.w3.org/2000/svg" width="9.79" height="10.425" viewBox="0 0 9.79 10.425">
+  <line id="Line_3" data-name="Line 3" x2="0.62" y2="2.713" transform="translate(2.674 4.921)" fill="none" stroke="#595959" stroke-linecap="round" stroke-width="1"/>
+  <line id="Line_4" data-name="Line 4" y2="2.674" transform="translate(4.882 4.921)" fill="none" stroke="#595959" stroke-linecap="round" stroke-width="1"/>
+  <line id="Line_5" data-name="Line 5" x1="0.775" y2="2.747" transform="translate(6.471 4.921)" fill="none" stroke="#595959" stroke-linecap="round" stroke-width="1"/>
+  <g id="Group_442" data-name="Group 442">
+    <path id="basket1" d="M9.444,23.964H7.553L6.176,20.648a.321.321,0,1,0-.593.246l1.274,3.07H2.907l1.274-3.07a.321.321,0,0,0-.593-.246L2.212,23.964H.321a.321.321,0,1,0,0,.642H.514l.629,3.442a1.574,1.574,0,0,0,1.549,1.291h4.38a1.574,1.574,0,0,0,1.549-1.291l.629-3.442h.193a.321.321,0,1,0,0-.642ZM7.99,27.932a.932.932,0,0,1-.917.765H2.692a.932.932,0,0,1-.917-.765l-.605-3.311H8.6Z" transform="translate(0 -20.45)" fill="#595959"/>
+    <circle id="Ellipse_24" data-name="Ellipse 24" cx="2.451" cy="2.451" r="2.451" transform="translate(4.889 5.524)" fill="#fff"/>
+    <g id="Group_441" data-name="Group 441" transform="translate(5.471 6.106)">
+      <circle id="Ellipse_24-2" data-name="Ellipse 24" cx="1.868" cy="1.868" r="1.868" transform="translate(0 0)" fill="red"/>
+      <g id="Group_440" data-name="Group 440" transform="translate(0.849 0.952)">
+        <line id="Line_1" data-name="Line 1" y2="2.039" transform="translate(1.02 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+        <line id="Line_2" data-name="Line 2" x1="2.039" transform="translate(0 1.02)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

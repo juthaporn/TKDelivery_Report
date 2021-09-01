@@ -1,0 +1,10 @@
+<svg id="Delete" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+  <g id="Ellipse_11" data-name="Ellipse 11" fill="none" stroke="red" stroke-width="1.5" opacity="0.66">
+    <circle cx="9.5" cy="9.5" r="9.5" stroke="none"/>
+    <circle cx="9.5" cy="9.5" r="8.75" fill="none"/>
+  </g>
+  <g id="Group_33" data-name="Group 33" transform="translate(5.981 5.986)">
+    <path id="Path_22" data-name="Path 22" d="M2260,85l7.108,7.108" transform="translate(-2260 -85)" fill="none" stroke="#ec3748" stroke-width="1"/>
+    <path id="Path_23" data-name="Path 23" d="M2260,85.792l7.184-7.184" transform="translate(-2260 -78.608)" fill="none" stroke="#ec3748" stroke-width="1"/>
+  </g>
+</svg>

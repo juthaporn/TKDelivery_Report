@@ -1,0 +1,7 @@
+<svg id="Opac-Fines" xmlns="http://www.w3.org/2000/svg" width="8.815" height="10.362" viewBox="0 0 8.815 10.362">
+  <g id="fine" transform="translate(3.767 3.322)">
+    <circle id="Ellipse_20" data-name="Ellipse 20" cx="0.717" cy="0.717" r="0.717" transform="translate(0 3.504)" fill="red"/>
+    <path id="Path_146" data-name="Path 146" d="M11.983,9.36a.651.651,0,0,1,.651.651v.036l-.105,1.9a.546.546,0,0,1-1.09,0l-.105-1.9a.652.652,0,0,1,.615-.687h.036Z" transform="translate(-11.266 -9.36)" fill="red" fill-rule="evenodd"/>
+  </g>
+  <path id="Path_145" data-name="Path 145" d="M13.428,6.668v6.539a.554.554,0,0,1-.551.558H7.368a1.188,1.188,0,0,1-1.181-1.2V6.193A1.188,1.188,0,0,1,7.368,5h6.454a.4.4,0,0,0,0-.8H7.368A1.98,1.98,0,0,0,5.4,6.193v6.377a1.98,1.98,0,0,0,1.968,1.993h5.51a1.346,1.346,0,0,0,1.338-1.355V6.588a.713.713,0,0,0-.708-.717H7.436a.4.4,0,0,0,0,.8Z" transform="translate(-5.4 -4.2)" fill="#595959"/>
+</svg>
