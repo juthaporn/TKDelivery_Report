@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="WALAI AutoLib">
     <meta name="generator" content="WALAI AutoLib 1.0.0.0">
-    <title>Creat delivery order report</title>
+    <title>Reject delivery order report</title>
 
     <!-- TK Font CSS -->
     <link href="../assets/fonts/fonts.css" rel="stylesheet">
@@ -361,7 +361,7 @@
                 
                 <div class="card">
                     <div class="card-header walai-card-header">
-                        Create delivery order report
+                        Reject delivery order report
                         
                     </div>
                     <div class="modal-body my-3">
@@ -391,28 +391,25 @@
                             </div>
                             <div class="col-5"></div>
                             <div class="col-2">
-                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 ">แสดงรายงาน</a></div>
+                            <div class="text-center"><a class="btn btn-danger rounded-pill tk-button mt-3">แสดงรายงาน</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row my-3">
-                    <div class="col-1">
-                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#columnsModal"><img src="../assets/img/column.png"><br>คอลัมน์</a>
+                <div class="row my-3 justify-content-between">
+                    <div class="col-auto">
+                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#columnsModal"><i class="bi bi-square-half tk-gray-v2" style="font-size:20px"></i><br>คอลัมน์</a>
+                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#filterModal" ><i class="bi bi-funnel-fill tk-gray-v2" style="font-size:20px"><br></i>ตัวกรอง</a>
                     </div>
-                    <div class="col-2">
-                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#filterModal" ><img src="../assets/img/fillter.png"><br>ตัวกรอง</a>
-                    </div>
-                    <div class="col-6"></div>
-                    <div class="col-2">
-                        <a class="btn report-button" id="showToast"><img src="../assets/img/share.png"><br>ส่งออก</a>
+                    <!-- <div class="col-2">
+                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#filterModal" ><i class="bi bi-funnel-fill tk-gray-v2"><br>ตัวกรอง</i></a>
+                    </div> -->
+                    <!-- <div class="col-6"></div> -->
+                    <div class="col-auto">
+                        <a class="btn report-button" id="showToast"><i class="bi bi-file-earmark-excel-fill tk-gray-v2" style="font-size:20px"></i><br>ส่งออก</a>
                     </div>
                 </div>
-                <div class="card">
-                    
-                        <!-- <div class="card-header walai-card-header"></div> -->
-
-
+                <!-- <div class="card">
                     <div class="card-body">
                         <div>
                             <table class="table ">
@@ -452,6 +449,38 @@
                             </table>
                         </div>
                     </div>
+                </div> -->
+
+                <div class="card">
+                    <div class="card-header walai-card-header-report">
+                        <div class="row">
+                            <div class="col-3">Order ID</div>
+                            <div class="col-3">Order Date</div>
+                            <div class="col-3">Receiver</div>
+                            <div class="col-3">Order Status</div>
+                        </div>
+                    </div>
+                    
+                    <div id="reportList" class="card-body my-2">
+                        <div class="row border-1 border-bottom pb-3 mb-3">
+                            <div class="col-3">DR00001</div>
+                            <div class="col-3">29 มกราคม 2564</div>
+                            <div class="col-3">Nancy Arom</div>
+                            <div class="col-3">รอชำระเงิน</div>
+                        </div>
+                        <div class="row border-1 border-bottom pb-3 mb-3">
+                            <div class="col-3">DR00002</div>
+                            <div class="col-3">29 มกราคม 2564</div>
+                            <div class="col-3">Nancy Arom</div>
+                            <div class="col-3">รอชำระเงิน</div>
+                        </div>
+                        <div class="row border-1 border-bottom pb-3 mb-3">
+                            <div class="col-3">DR00003</div>
+                            <div class="col-3">29 มกราคม 2564</div>
+                            <div class="col-3">Nancy Arom</div>
+                            <div class="col-3">รอชำระเงิน</div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
@@ -478,3 +507,4 @@
 </body>
 
 </html>
+
