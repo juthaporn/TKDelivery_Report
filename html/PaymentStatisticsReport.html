@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="WALAI AutoLib">
     <meta name="generator" content="WALAI AutoLib 1.0.0.0">
-    <title>Creat delivery order report</title>
+    <title>สถิติสรุปยอดการชำระเงิน</title>
 
     <!-- TK Font CSS -->
     <link href="../assets/fonts/fonts.css" rel="stylesheet">
@@ -39,16 +39,16 @@
     <header class="navbar sticky-top  flex-md-nowrap p-0 navbar-light bg-white " style="z-index: 99 !important;">
 
          <!-- Toast message -->
-         <div class="position-fixed top-0 start-50 translate-middle" style="margin-top: 5rem !important">
+         <!-- <div class="position-fixed top-0 start-50 translate-middle" style="margin-top: 5rem !important">
             <div class="toast align-items-center bg-dark text-white" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                     <div class="toast-body">
-                        ส่งออกข้อมูลเรียบร้อยแล้ว
+                        บันทึกเรียบร้อยแล้ว
                     </div>
                     <button type="button" class="btn-close me-2 m-auto text-white"  data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- End Toast message -->
 
 
@@ -79,72 +79,8 @@
 
 
 
-    <!-- Modal filter-->
-    <div class="modal  fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header tk-modal-header">
-                    <h6 class="modal-title" id="filterModalLabel">กรองรายงาน</h6>
-                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close"></a> 
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-3">Order ID</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option>เริ่มต้นด้วย</option>
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value="DR" disabled><br></div>
-                        <div class="col-3">Order Date</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option> </option>
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                <option>เริ่มต้นด้วย</option>
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value=" " disabled><br></div>
-                        <div class="col-3">Receiver</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option> </option>
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                <option>เริ่มต้นด้วย</option>
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value="Nancy" disabled><br></div>
-                        <div class="col-3">Order Status</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                <option>เริ่มต้นด้วย</option>
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value=" " disabled></div>
-                    </div>
-
-                </div>
-                <div class="modal-footer tk-modal-footer">
-                    <a class="btn tk-modal-footer-button w-100">กรอง</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="container master-container">
         <div class="row">
-            <!-- Menu -->
             <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse tk-dark-v1">
                 <ul class=" nav justify-content-between w-100 d-md-none " style="margin-top: 1rem ">
 
@@ -160,7 +96,7 @@
                 </ul>
 
                 <hr class="d-md-none ">
-                
+
                 <div class="position-sticky pt-md-3 ">
 
                     <a class="nav-link sidebar-heading" href="#">
@@ -216,34 +152,15 @@
                                 <span class="float-start"><i class="bi bi-geo-fill  sidebarMenu-icon"></i> รอให้มารับ </span>
                                 <span class="badge bg-danger sidebarMenu-badge" style="top: 2px !important;">4</span>
                             </a>
+
+
                         </li>
                     </ul>
                     <hr>
-                   <!-- <a class="nav-link sidebar-heading  sidebarMenu-li-active" href="../html/History.html">
+                    <a class="nav-link sidebar-heading  sidebarMenu-li-active" href="../html/History.html">
                         <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
-                        <span class="bi bi-arrow-down-circle-fill sidebarMenu-badge" style="top: 6px !important;"></span>
-
-                    </a>    -->
-
-                    <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center  link-dark text-decoration-none dropdown-toggle nav-link sidebar-heading  sidebarMenu-li-active" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false" >
-                            <i class="bi bi-clock-history sidebarMenu-icon"></i>ประวัติการทำรายการ
-                            </a> 
-                            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/CreateDeliveryReport.html">create delivery order report</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryOrderReport.html">reject delivery order report </a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">reject item report </a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">รายงานการชำระเงิน</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">รายงานข้อมูลการจัดส่งหนังสือ</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">รายงานการปฏิบัติงานของเจ้าหน้าที่</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/PaymentStatisticsReport.html">สถิติสรุปยอดการชำระเงิน</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">สถิติรูปแบบการจัดส่งหนังสือ</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">สถิติการจัดส่งหนังสือในแต่ละพื้นที่</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="#">สถิติการจัดส่งแต่ละบริษัทขนส่ง</a></li>
-                            </ul>
-                        </div>
-                       
-                    <hr>                  
+                    </a>
+                    <hr>
                     <a class="nav-link sidebar-heading" href="#">
                         <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
                     </a>
@@ -323,14 +240,17 @@
                         class="btn btn-outline-danger rounded-pill sidebarMenu-li py-1">ออกจากระบบ</a>
                 </div>
             </nav>
-            <!-- Menu -->
+
 
             <main class="col-md-8 ms-sm-auto col-lg-9 px-md-4 " style="margin-top: 20px; ">
                 
                 <div class="card">
                     <div class="card-header walai-card-header">
-                        Create delivery order report
-                        
+                        สถิติสรุปยอดการชำระเงิน
+                        <span class="sidebarMenu-badge">
+                            <a data-bs-toggle="modal" data-bs-target="#filterModal" class="tk-a"><i
+                                    class="bi bi-funnel-fill tk-red"></i></a>
+                        </span>
                     </div>
                     <div class="modal-body my-3">
                         <div class="row">
@@ -338,7 +258,7 @@
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">วันเริ่มต้น (วันที่ทำรายการ)</label>
                                     <div class="input-group mb-2">
-                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="20 Mar 2020">
+                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="Start date">
                                         <span class="form-control-btn">
                                             <i class="bi bi-calendar"></i>
                                         </span>
@@ -350,7 +270,7 @@
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">วันที่สิ้นสุด (ช่วงวันที่ทำรายการ)</label>
                                     <div class="input-group mb-2">
-                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="20 Mar 2020">
+                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="Start date">
                                         <span class="form-control-btn">
                                             <i class="bi bi-calendar"></i>
                                         </span>
@@ -359,79 +279,14 @@
                             </div>
                             <div class="col-5"></div>
                             <div class="col-2">
-                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 ">แสดงรายงาน</a></div>
+                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 " href="../html/PaymentStatisticsReportDisplay.html" >แสดงรายงาน</a></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-3 justify-content-between">
-                    <div class="col-auto">
-                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#columnsModal"><i class="bi bi-square-half tk-gray-v2" style="font-size:20px"></i><br>คอลัมน์</a>
-                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#filterModal" ><i class="bi bi-funnel-fill tk-gray-v2" style="font-size:20px"><br></i>ตัวกรอง</a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="btn report-button" id="showToast"><i class="bi bi-file-earmark-excel-fill tk-gray-v2" style="font-size:20px"></i><br>ส่งออก</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header walai-card-header-report">
-                        <div class="row">
-                            <div class="col-3">Order ID</div>
-                            <div class="col-3">Order Date</div>
-                            <div class="col-3">Receiver</div>
-                            <div class="col-3">Order Status </div>
-                        </div>
-                    </div>
-                    
-                    <div id="reportList" class="card-body my-2">
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00001</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom</div>
-                            <div class="col-3">รอชำระเงิน</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00002</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Will Smith</div>
-                            <div class="col-3">ตรวจสอบการชำระเงิน</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00003</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom</div>
-                            <div class="col-3">รอชำระเงิน</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00004</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Will Smith</div>
-                            <div class="col-3">กำลังดำเนินการ</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00005</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom</div>
-                            <div class="col-3">กำลังดำเนินการ</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00006</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Will Smith</div>
-                            <div class="col-3">กำลังดำเนินการ</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00007</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom </div>
-                            <div class="col-3">รายการใหม่</div>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
-   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 
@@ -439,7 +294,7 @@
 
 
 
-    <script>
+    <!-- <script>
         // A $( document ).ready() block.
         $(document).ready(function() {
 
@@ -448,7 +303,7 @@
             });
 
         });
-    </script>
+    </script> -->
 
 
 </body>
