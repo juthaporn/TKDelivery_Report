@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="WALAI AutoLib">
     <meta name="generator" content="WALAI AutoLib 1.0.0.0">
-    <title>สถิติรูปแบบการจัดส่งหนังสือ</title>
+    <title>รายงานการปฏิบัติงานของเจ้าหน้าที่</title>
 
     <!-- TK Font CSS -->
     <link href="../assets/fonts/fonts.css" rel="stylesheet">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-3">Order ID</div>
+                        <div class="col-3">Username</div>
                         <div class="col-4">
                             <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
                                 <option>เริ่มต้นด้วย</option>
@@ -100,7 +100,7 @@
                             </select> 
                         </div>
                         <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value="DR" disabled><br></div>
-                        <div class="col-3">Order Date</div>
+                        <div class="col-3">Action</div>
                         <div class="col-4">
                             <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
                                 <option> </option>
@@ -111,7 +111,7 @@
                             </select> 
                         </div>
                         <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value=" " disabled><br></div>
-                        <div class="col-3">Receiver</div>
+                        <div class="col-3">Order ID</div>
                         <div class="col-4">
                             <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
                                 <option> </option>
@@ -122,7 +122,7 @@
                             </select> 
                         </div>
                         <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value="Nancy" disabled><br></div>
-                        <div class="col-3">Order Status</div>
+                        <div class="col-3">History Date</div>
                         <div class="col-4">
                             <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
                                 <option>เท่ากับ</option>
@@ -326,7 +326,7 @@
                 
                 <div class="card">
                     <div class="card-header walai-card-header">
-                        สถิติรูปแบบการจัดส่งหนังสือ
+                        รายงานการปฏิบัติงานของเจ้าหน้าที่
                         
                     </div>
                     <div class="modal-body my-3">
@@ -362,7 +362,9 @@
                     </div>
                 </div>
                 <div class="row my-3 justify-content-between">
-                    <div class="col-auto"> 
+                    <div class="col-auto">
+                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#columnsModal"><i class="bi bi-square-half tk-gray-v2" style="font-size:20px"></i><br>คอลัมน์</a>
+                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#filterModal" ><i class="bi bi-funnel-fill tk-gray-v2" style="font-size:20px"><br></i>ตัวกรอง</a>
                     </div>
                     <div class="col-auto">
                         <a class="btn report-button" id="showToast"><i class="bi bi-file-earmark-excel-fill tk-gray-v2" style="font-size:20px"></i><br>ส่งออก</a>
@@ -371,26 +373,62 @@
                     <div class="card">
                         <div class="card-header walai-card-header-report">
                             <div class="row">
-                                <div class="col-3">Delivery Type</div>
-                                <div class="col-3">จำนวน(ออเดอร์)</div>
+                                <div class="col-3">Username</div>
+                                <div class="col-3">Action</div>
+                                <div class="col-3">Order ID</div>
+                                <div class="col-3">History Date/Time</div>
                                
                             </div>
                         </div>
                         
                         <div id="reportList" class="card-body my-2">
                             <div class="row border-1 border-bottom pb-3 mb-3">
-                                <div class="col-3">จัดส่งผ่านบริษัทขนส่ง</div>
-                                <div class="col-3">2</div>
+                                <div class="col-3">ศิริรัตน์ บุญทอย</div>
+                                <div class="col-3">ยกเลิกรายการ</div>
+                                <div class="col-3">DR00001</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
                                 
                             </div>
                             <div class="row border-1 border-bottom pb-3 mb-3">
-                                <div class="col-3">รับที่ห้องสมุดสาขา</div>
-                                <div class="col-3">5</div>
+                                <div class="col-3">ศิริรัตน์ บุญทอย</div>
+                                <div class="col-3">จัดส่ง</div>
+                                <div class="col-3">DR00002</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
                                 
                             </div>
                             <div class="row border-1 border-bottom pb-3 mb-3">
-                                <div class="col-3">รวม</div>
-                                <div class="col-3">7</div>
+                                <div class="col-3">Adam Smith</div>
+                                <div class="col-3">ยกเลิกรายการ</div>
+                                <div class="col-3">DR00003</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
+                                
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">Adam Smith</div>
+                                <div class="col-3">รับรายการ</div>
+                                <div class="col-3">DR00004</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
+                                
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">Ryan Smith</div>
+                                <div class="col-3">แจ้งค่าจัดส่ง</div>
+                                <div class="col-3">DR00005</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
+                                
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">ศิริรัตน์ บุญทอย</div>
+                                <div class="col-3">ยกเลิกรายการ</div>
+                                <div class="col-3">DR00006</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
+                                
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3"> Ryan Smith</div>
+                                <div class="col-3">รับรายการ</div>
+                                <div class="col-3">DR00007</div>
+                                <div class="col-3">29 มกราคม 2564 08:00 น.</div>
                                 
                             </div>
                         </div>
