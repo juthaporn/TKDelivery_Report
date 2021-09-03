@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="WALAI AutoLib">
     <meta name="generator" content="WALAI AutoLib 1.0.0.0">
-    <title>Creat delivery order report</title>
+    <title>สถิติสรุปยอดการชำระเงิน</title>
 
     <!-- TK Font CSS -->
     <link href="../assets/fonts/fonts.css" rel="stylesheet">
@@ -79,68 +79,7 @@
 
 
 
-    <!-- Modal filter-->
-    <div class="modal  fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header tk-modal-header">
-                    <h6 class="modal-title" id="filterModalLabel">กรองรายงาน</h6>
-                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close"></a> 
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-3">Order ID</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option>เริ่มต้นด้วย</option>
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value="DR" disabled><br></div>
-                        <div class="col-3">Order Date</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option> </option>
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                <option>เริ่มต้นด้วย</option>
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value=" " disabled><br></div>
-                        <div class="col-3">Receiver</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option> </option>
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                <option>เริ่มต้นด้วย</option>
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value="Nancy" disabled><br></div>
-                        <div class="col-3">Order Status</div>
-                        <div class="col-4">
-                            <select id="disabledSelect" class="form-select rounded-pill tk-form-control">
-                                <option>เท่ากับ</option>
-                                <option>มากกว่า</option>
-                                <option>น้อยกว่า</option>
-                                <option>เริ่มต้นด้วย</option>
-                            </select> 
-                        </div>
-                        <div class="col-5"><input type="text" id="disabledTextInput" class="form-control rounded-pill tk-form-control" value=" " disabled></div>
-                    </div>
-
-                </div>
-                <div class="modal-footer tk-modal-footer">
-                    <a class="btn tk-modal-footer-button w-100">กรอง</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
     <div class="container master-container">
         <div class="row">
@@ -221,28 +160,26 @@
                     <hr>
                    <!-- <a class="nav-link sidebar-heading  sidebarMenu-li-active" href="../html/History.html">
                         <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
-                        <span class="bi bi-arrow-down-circle-fill sidebarMenu-badge" style="top: 6px !important;"></span>
 
-                    </a>    -->
+                    </a>   -->
 
                     <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center  link-dark text-decoration-none dropdown-toggle nav-link sidebar-heading  sidebarMenu-li-active" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false" >
-                            <i class="bi bi-clock-history sidebarMenu-icon"></i>ประวัติการทำรายการ
-                            </a> 
-                            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/CreateDeliveryReport.html">create delivery order report</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryOrderReport.html">reject delivery order report </a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryItemReport.html">reject item report </a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/BookDeliveryReport.html">รายงานการชำระเงิน</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/BookDeliveryReport.html">รายงานข้อมูลการจัดส่งหนังสือ</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsPaymentReport.html">รายงานการปฏิบัติงานของเจ้าหน้าที่</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsPaymentReport.html">สถิติสรุปยอดการชำระเงิน</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsDeliveryTypeReport.html">สถิติรูปแบบการจัดส่งหนังสือ</a></li>
-                                <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsShippingCompanyReport.html">สถิติการจัดส่งแต่ละบริษัทขนส่ง</a></li>
-                            </ul>
-                        </div>
-                       
-                    <hr>                  StatisticsDeliveryTypeReport
+                        <a href="#" class="d-flex align-items-center  link-dark text-decoration-none dropdown-toggle nav-link sidebar-heading  sidebarMenu-li-active" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <i class="bi bi-clock-history sidebarMenu-icon"></i>ประวัติการทำรายการ
+                                </a> 
+                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/CreateDeliveryReport.html">create delivery order report</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryOrderReport.html">reject delivery order report </a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryItemReport.html">reject item report </a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/BookDeliveryReport.html">รายงานการชำระเงิน</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/BookDeliveryReport.html">รายงานข้อมูลการจัดส่งหนังสือ</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsPaymentReport.html">รายงานการปฏิบัติงานของเจ้าหน้าที่</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsPaymentReport.html">สถิติสรุปยอดการชำระเงิน</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsDeliveryTypeReport.html">สถิติรูปแบบการจัดส่งหนังสือ</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsShippingCompanyReport.html">สถิติการจัดส่งแต่ละบริษัทขนส่ง</a></li>
+                                </ul>
+                            </div>
+                    <hr>                  
                     <a class="nav-link sidebar-heading" href="#">
                         <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
                     </a>
@@ -328,7 +265,7 @@
                 
                 <div class="card">
                     <div class="card-header walai-card-header">
-                        Create delivery order report
+                        สถิติสรุปยอดการชำระเงิน
                         
                     </div>
                     <div class="modal-body my-3">
@@ -364,73 +301,49 @@
                     </div>
                 </div>
                 <div class="row my-3 justify-content-between">
-                    <div class="col-auto">
-                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#columnsModal"><i class="bi bi-square-half tk-gray-v2" style="font-size:20px"></i><br>คอลัมน์</a>
-                        <a class="btn report-button" data-bs-toggle="modal" data-bs-target="#filterModal" ><i class="bi bi-funnel-fill tk-gray-v2" style="font-size:20px"><br></i>ตัวกรอง</a>
+                    <div class="col-auto"> 
                     </div>
                     <div class="col-auto">
                         <a class="btn report-button" id="showToast"><i class="bi bi-file-earmark-excel-fill tk-gray-v2" style="font-size:20px"></i><br>ส่งออก</a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header walai-card-header-report">
-                        <div class="row">
-                            <div class="col-3">Order ID</div>
-                            <div class="col-3">Order Date</div>
-                            <div class="col-3">Receiver</div>
-                            <div class="col-3">Order Status </div>
+                    <div class="card">
+                        <div class="card-header walai-card-header-report">
+                            <div class="row">
+                                <div class="col-3">Payment </div>
+                                <div class="col-3">Cost</div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div id="reportList" class="card-body my-2">
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">My TK (e Money)</div>
+                                <div class="col-3">500.00 ฿</div>
+ 
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">Bank  transfer</div>
+                                <div class="col-3">200.00 ฿</div>
+                                
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">e Banking</div>
+                                <div class="col-3">3,500.00 ฿</div>
+                               
+                            </div>
+                            <div class="row border-1 border-bottom pb-3 mb-3">
+                                <div class="col-3">รวม</div>
+                                <div class="col-3">4,200.00 ฿</div>
+                               
+                            </div>
                         </div>
                     </div>
-                    
-                    <div id="reportList" class="card-body my-2">
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00001</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom</div>
-                            <div class="col-3">รอชำระเงิน</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00002</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Will Smith</div>
-                            <div class="col-3">ตรวจสอบการชำระเงิน</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00003</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom</div>
-                            <div class="col-3">รอชำระเงิน</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00004</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Will Smith</div>
-                            <div class="col-3">กำลังดำเนินการ</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00005</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom</div>
-                            <div class="col-3">กำลังดำเนินการ</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00006</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Will Smith</div>
-                            <div class="col-3">กำลังดำเนินการ</div>
-                        </div>
-                        <div class="row border-1 border-bottom pb-3 mb-3">
-                            <div class="col-3">DR00007</div>
-                            <div class="col-3">29 มกราคม 2564</div>
-                            <div class="col-3">Nancy Arom </div>
-                            <div class="col-3">รายการใหม่</div>
-                        </div>
-                    </div>
-                </div>
+
             </main>
         </div>
     </div>
-   
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="WALAI AutoLib">
     <meta name="generator" content="WALAI AutoLib 1.0.0.0">
-    <title>สถิติสรุปยอดการชำระเงิน</title>
+    <title>สถิติการจัดส่งแต่ละบริษัทขนส่ง</title>
 
     <!-- TK Font CSS -->
     <link href="../assets/fonts/fonts.css" rel="stylesheet">
@@ -157,9 +157,22 @@
                         </li>
                     </ul>
                     <hr>
-                    <a class="nav-link sidebar-heading  sidebarMenu-li-active" href="../html/History.html">
-                        <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
-                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center  link-dark text-decoration-none dropdown-toggle nav-link sidebar-heading  sidebarMenu-li-active" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <i class="bi bi-clock-history sidebarMenu-icon"></i>ประวัติการทำรายการ
+                                </a> 
+                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/CreateDeliveryReport.html">create delivery order report</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryOrderReport.html">reject delivery order report </a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryItemReport.html">reject item report </a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/BookDeliveryReport.html">รายงานการชำระเงิน</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/BookDeliveryReport.html">รายงานข้อมูลการจัดส่งหนังสือ</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsPaymentReport.html">รายงานการปฏิบัติงานของเจ้าหน้าที่</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsPaymentReport.html">สถิติสรุปยอดการชำระเงิน</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsDeliveryTypeReport.html">สถิติรูปแบบการจัดส่งหนังสือ</a></li>
+                                    <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsShippingCompanyReport.html">สถิติการจัดส่งแต่ละบริษัทขนส่ง</a></li>
+                                </ul>
+                            </div>
                     <hr>
                     <a class="nav-link sidebar-heading" href="#">
                         <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
@@ -246,7 +259,7 @@
                 
                 <div class="card">
                     <div class="card-header walai-card-header">
-                        สถิติสรุปยอดการชำระเงิน
+                        สถิติการจัดส่งแต่ละบริษัทขนส่ง
                         <span class="sidebarMenu-badge">
                             <a data-bs-toggle="modal" data-bs-target="#filterModal" class="tk-a"><i
                                     class="bi bi-funnel-fill tk-red"></i></a>
@@ -279,7 +292,7 @@
                             </div>
                             <div class="col-5"></div>
                             <div class="col-2">
-                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 " href="../html/PaymentStatisticsReportDisplay.html" >แสดงรายงาน</a></div>
+                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 " href="../html/StatisticsShippingCompanyReportDisplay.html" >แสดงรายงาน</a></div>
                             </div>
                         </div>
                     </div>
