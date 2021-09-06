@@ -219,17 +219,11 @@
                         </li>
                     </ul>
                     <hr>
-                   <!-- <a class="nav-link sidebar-heading  sidebarMenu-li-active" href="../html/History.html">
-                        <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ
-                        <span class="bi bi-arrow-down-circle-fill sidebarMenu-badge" style="top: 6px !important;"></span>
-
-                    </a>    -->
-
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center  link-dark text-decoration-none dropdown-toggle nav-link sidebar-heading  sidebarMenu-li-active" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false" >
-                                <i class="bi bi-clock-history sidebarMenu-icon"></i>ประวัติการทำรายการ
-                                </a> 
-                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
+                        <div class="dropdown ">
+                            <a class="nav-link sidebar-heading  sidebarMenu-li-active " href="../html/History.html">
+                                <i class="bi bi-clock-history sidebarMenu-icon"></i> ประวัติการทำรายการ</a>
+                                <a class="d-flex link-dark text-decoration-none dropdown-toggle justify-content-end" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false"style="top: 20px !important;" ></a> 
+                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink" >
                                     <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/CreateDeliveryReport.html">create delivery order report</a></li>
                                     <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryOrderReport.html">reject delivery order report </a></li>
                                     <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/RejectDeliveryItemReport.html">reject item report </a></li>
@@ -241,8 +235,9 @@
                                     <li><a class="dropdown-item bi bi-file-earmark-text" href="../html/StatisticsShippingCompanyReport.html">สถิติการจัดส่งแต่ละบริษัทขนส่ง</a></li>
                                 </ul>
                             </div>
-                       
-                    <hr>                  StatisticsDeliveryTypeReport
+
+                          
+                    <hr>              
                     <a class="nav-link sidebar-heading" href="#">
                         <i class="bi bi-person-fill sidebarMenu-icon"></i> ผู้ดูแลระบบกลาง
                     </a>
@@ -337,7 +332,7 @@
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">วันเริ่มต้น (วันที่ทำรายการ)</label>
                                     <div class="input-group mb-2">
-                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="20 Mar 2020">
+                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="Start date">
                                         <span class="form-control-btn">
                                             <i class="bi bi-calendar"></i>
                                         </span>
@@ -349,7 +344,7 @@
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">วันที่สิ้นสุด (ช่วงวันที่ทำรายการ)</label>
                                     <div class="input-group mb-2">
-                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="20 Mar 2020">
+                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="End date">
                                         <span class="form-control-btn">
                                             <i class="bi bi-calendar"></i>
                                         </span>
