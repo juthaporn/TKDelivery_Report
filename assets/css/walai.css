@@ -213,7 +213,7 @@ body {
 .report-button {
   background-color: #ffffff;
   border: 1px solid #ffffff;
-  color: #979797;
+  color: #383838;
   /* padding: 15px 32px; */
   /* padding: auto 25px; */
   text-align: center;
@@ -223,9 +223,44 @@ body {
   float: left;
 }
 
+.report-button:hover {
+  color: #ec3748;
+}
+
 .report-icon {
   font-size: 1.1rem;
   color: var(--tk-black);
+}
+
+.report-icon:hover {
+  color: #ec3748;
+}
+
+.myBox {
+  border: none;
+  padding: 5px;
+  width: 100%;
+  overflow: scroll;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 .walai-icon {
