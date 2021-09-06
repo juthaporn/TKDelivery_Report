@@ -71,9 +71,9 @@ body {
   /* padding: 2px 15px 2px 15px; */
   font-size: 10px !important;
 }
-.dropdown-menu{
-   /* padding: 2px 15px 2px 15px; */
-   font-size: 10px !important;
+.dropdown-menu {
+  /* padding: 2px 15px 2px 15px; */
+  font-size: 10px !important;
 }
 /*
  * Sidebar
@@ -221,6 +221,11 @@ body {
   font-size: 15px !important;
   cursor: pointer;
   float: left;
+}
+
+.report-icon {
+  font-size: 1.1rem;
+  color: var(--tk-black);
 }
 
 .walai-icon {
