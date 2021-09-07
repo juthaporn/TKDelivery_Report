@@ -76,10 +76,21 @@
 
         </nav>
     </header>
-
-
-
-  
+    
+    <!-- Detail -->
+    <div class="modal  fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header tk-modal-header">
+                    <h6 class="modal-title" id="detailModalLabel">คำอธิบายรายงาน</h6>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close"></a> 
+                </div>
+                <div class="modal-body">
+                    <p class="tk-modal-body-p">ข้อมูลสถิติสรุปยอดการชำระเงิน</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container master-container">
         <div class="row">
@@ -316,7 +327,9 @@
                 <div class="card">
                     <div class="card-header walai-card-header">
                         สถิติสรุปยอดการชำระเงิน
-                        
+                        <span class="sidebarMenu-badge">
+                            <a data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bi bi-info-circle tk-gray-v2"></i></a>
+                        </span>
                     </div>
                     <div class="modal-body my-3">
                         <div class="row">
@@ -362,7 +375,9 @@
                             <div class="row">
                                 <div class="col-3"></div>
                                 <div class="col-3">Payment </div>
-                                <div class="col-3" style="text-align:right">Cost<i class="bi bi-sort-down-alt report-icon"></i></div>
+                                <div class="col-3" style="text-align:right">Cost
+                                    <!-- <i class="bi bi-sort-down-alt report-icon"></i> -->
+                                </div>
                                 <div class="col-3"></div>
                                 
                             </div>

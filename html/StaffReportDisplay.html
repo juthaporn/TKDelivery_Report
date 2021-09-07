@@ -142,6 +142,21 @@
         </div>
     </div>
 
+        <!-- Detail -->
+        <div class="modal  fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header tk-modal-header">
+                        <h6 class="modal-title" id="detailModalLabel">คำอธิบายรายงาน</h6>
+                        <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close"></a> 
+                    </div>
+                    <div class="modal-body">
+                        <p class="tk-modal-body-p">รายงานการปฏิบัติงานของเจ้าหน้าที่</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     <div class="container master-container">
         <div class="row">
             <!-- Menu -->
@@ -379,7 +394,9 @@
                 <div class="card">
                     <div class="card-header walai-card-header">
                         รายงานการปฏิบัติงานของเจ้าหน้าที่
-                        
+                        <span class="sidebarMenu-badge">
+                            <a data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bi bi-info-circle tk-gray-v2"></i></a>
+                        </span>
                     </div>
                     <div class="modal-body my-3">
                         <div class="row">
@@ -387,7 +404,7 @@
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">วันเริ่มต้น (วันที่ทำรายการ)</label>
                                     <div class="input-group mb-2">
-                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="20 Mar 2020">
+                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="29 มกราคม 2564">
                                         <span class="form-control-btn">
                                             <i class="bi bi-calendar"></i>
                                         </span>
@@ -399,7 +416,7 @@
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">วันที่สิ้นสุด (ช่วงวันที่ทำรายการ)</label>
                                     <div class="input-group mb-2">
-                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="20 Mar 2020">
+                                        <input id="myInput" type="text" class="form-control tk-form-control rounded-pill " placeholder="29 มกราคม 2564">
                                         <span class="form-control-btn">
                                             <i class="bi bi-calendar"></i>
                                         </span>
