@@ -71,10 +71,7 @@ body {
   /* padding: 2px 15px 2px 15px; */
   font-size: 10px !important;
 }
-.dropdown-menu {
-  /* padding: 2px 15px 2px 15px; */
-  font-size: 10px !important;
-}
+
 /*
  * Sidebar
  */
@@ -140,22 +137,25 @@ body {
 }
 
 .sidebar-heading {
-  font-size: 0.75rem;
-  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: 700 !important;
+  /* text-transform: uppercase; */
 }
 
 .sidebarMenu-li {
   font-weight: normal !important;
-  font-size: 12px !important;
+  /* font-size: inherit !important; */
+  font-size: 1em !important;
 }
 
 .sidebarMenu-badge {
   text-align: right;
   float: right;
+  padding-bottom: 0.5em;
 }
 
 .sidebarMenu-icon {
-  font-size: 1.1rem;
+  font-size: inherit;
   color: var(--tk-gray-v2);
 }
 
@@ -234,33 +234,6 @@ body {
 
 .report-icon:hover {
   color: #ec3748;
-}
-
-.myBox {
-  border: none;
-  padding: 5px;
-  width: 100%;
-  overflow: scroll;
-}
-
-/* Scrollbar styles */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f5f5f5;
-  border-radius: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 7px;
-  background: #ccc;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #999;
 }
 
 .walai-icon {
@@ -556,6 +529,7 @@ input[disabled] {
   box-shadow: 0 0 0 0.25rem var(--tk-red-v2);
   background-color: var(--tk-gray-v6);
 }
+
 .example {
   background-color: #ffffff;
   width: 700px;
@@ -566,18 +540,18 @@ input[disabled] {
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .example {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .examplecolum {
   background-color: #ffffff;
-  width: 499px;
+  width: 498px;
   height: 300px;
   border: 1px dotted #ffffff;
   overflow-y: scroll; /* Add the ability to scroll */
@@ -585,12 +559,11 @@ input[disabled] {
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .example {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
-
