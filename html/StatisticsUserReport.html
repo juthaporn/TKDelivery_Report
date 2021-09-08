@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="WALAI AutoLib">
     <meta name="generator" content="WALAI AutoLib 1.0.0.0">
-    <title>Reject delivery order report</title>
+    <title>สถิตการเข้าใช้งาน</title>
 
     <!-- TK Font CSS -->
     <link href="../assets/fonts/fonts.css" rel="stylesheet">
@@ -38,7 +38,18 @@
 <body>
     <header class="navbar sticky-top  flex-md-nowrap p-0 navbar-light bg-white " style="z-index: 99 !important;">
 
-    
+         <!-- Toast message -->
+         <!-- <div class="position-fixed top-0 start-50 translate-middle" style="margin-top: 5rem !important">
+            <div class="toast align-items-center bg-dark text-white" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        บันทึกเรียบร้อยแล้ว
+                    </div>
+                    <button type="button" class="btn-close me-2 m-auto text-white"  data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div> -->
+        <!-- End Toast message -->
 
 
         <nav class="container navbar-expand-lg" style="max-width: 1000px;">
@@ -66,20 +77,6 @@
         </nav>
     </header>
 
-    <!-- Detail -->
-    <div class="modal  fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header tk-modal-header">
-                    <h6 class="modal-title" id="detailModalLabel">คำอธิบายรายงาน</h6>
-                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close"></a> 
-                </div>
-                <div class="modal-body">
-                    <p class="tk-modal-body-p">รายงานการยกเลิก order</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <div class="container master-container">
@@ -98,6 +95,20 @@
                     </li>
                 </ul>
 
+    <!-- Detail -->
+    <div class="modal  fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header tk-modal-header">
+                    <h6 class="modal-title" id="detailModalLabel">คำอธิบายรายงาน</h6>
+                    <a class="btn bi bi-x-circle-fill tk-gray-v3" style="width: 18px;" data-bs-dismiss="modal" aria-label="Close"></a> 
+                </div>
+                <div class="modal-body">
+                    <p class="tk-modal-body-p">สถิตการเข้าใช้งานของผู้ใช้</p>
+                </div>
+            </div>
+        </div>
+    </div>
                 <hr class="d-md-none ">
 
                 <div class="position-sticky pt-md-3 ">
@@ -134,7 +145,7 @@
                             </a>
 
 
-                       </li>
+                        </li>
                         <li class="nav-item ">
                             
                             <a class="btn w-100 sidebarMenu-li" href="../html/PrepareForTransis.html">
@@ -186,7 +197,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link sidebarMenu-li  sidebarMenu-li-active " href="../html/RejectDeliveryOrderReport.html">
+                                    <a class="nav-link sidebarMenu-li" href="../html/RejectDeliveryOrderReport.html">
                                         <i class=" bi bi-file-earmark-text sidebarMenu-icon"></i>reject delivery order report
                                     </a>
                                 </li>
@@ -206,7 +217,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link sidebarMenu-li" href="../html/StaffReport.html">
+                                    <a class="nav-link sidebarMenu-li  " href="../html/StaffReport.html">
                                         <i class=" bi bi-file-earmark-text sidebarMenu-icon"></i>รายงานการปฏิบัติงานของเจ้าหน้าที่
                                     </a>
                                 </li>
@@ -226,7 +237,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link sidebarMenu-li" href="../html/StatisticsUserReport.html">
+                                    <a class="nav-link sidebarMenu-li sidebarMenu-li-active " href="../html/StatisticsUserReport.html">
                                         <i class=" bi bi-file-earmark-text sidebarMenu-icon"></i>สถิติการเข้าใช้งาน
                                     </a>
                                 </li>
@@ -317,7 +328,7 @@
                 
                 <div class="card">
                     <div class="card-header walai-card-header">
-                        Reject delivery order report
+                        สถิตการเข้าใช้งาน
                         <span class="sidebarMenu-badge">
                             <a data-bs-toggle="modal" data-bs-target="#detailModal"><i class="bi bi-info-circle tk-gray-v2"></i></a>
                         </span>
@@ -349,7 +360,7 @@
                             </div>
                             <div class="col-5"></div>
                             <div class="col-2">
-                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 " href="../html/RejectDeliveryOrderReportDisplay.html">แสดงรายงาน</a></div>
+                            <div class="text-center "><a class="btn btn-danger rounded-pill tk-button mt-3 " href="../html/StatisticsUserReportDisplay.html" >แสดงรายงาน</a></div>
                             </div>
                         </div>
                     </div>
